@@ -6,16 +6,15 @@ call and interprets the structured numeric result (master spec section 9, Agent 
 """
 from __future__ import annotations
 
-from pathlib import Path
-
 import pandas as pd
 from strands import tool
 
+from riskripple.config import FIXTURES_DIR
 from riskripple.finance import portfolio as P, returns as R, risk as K
 from riskripple.finance.stress import DEMO_SCENARIOS, run_stress_test
 from riskripple.ingestion.market_data import SnapshotMarketDataProvider
 
-_DEFAULT_SNAPSHOT_DIR = Path(__file__).resolve().parents[4] / "data" / "fixtures" / "market"
+_DEFAULT_SNAPSHOT_DIR = FIXTURES_DIR / "market"
 
 
 @tool

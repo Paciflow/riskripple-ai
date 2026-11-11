@@ -13,8 +13,8 @@ should produce the same AnalysisResult shape, not different data.
 from __future__ import annotations
 
 import time
-from pathlib import Path
 
+from riskripple.config import FIXTURES_DIR
 from riskripple.schemas.models import (
     AnalysisResult,
     AnalysisStatus,
@@ -30,9 +30,6 @@ from riskripple.tools import exposure_tools as ET
 from riskripple.tools import finance_tools as FT
 from riskripple.tools import persona_tools as PT
 from riskripple.tools import regulatory_tools as RT
-
-REPO_ROOT = Path(__file__).resolve().parents[4]
-FIXTURES_DIR = REPO_ROOT / "data" / "fixtures"
 
 
 class _AuditLog:

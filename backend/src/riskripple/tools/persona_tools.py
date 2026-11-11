@@ -2,16 +2,14 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 
 from strands import tool
 
+from riskripple.config import REPORTS_DIR
 from riskripple.finance.stress import DEMO_SCENARIOS
 from riskripple.personas import policies as PP
 from riskripple.schemas.models import PersonaName
 from riskripple.schemas.provenance import SourceMetadata
-
-REPORTS_DIR = Path(__file__).resolve().parents[4] / "data" / "analysis" / "reports"
 
 
 @tool

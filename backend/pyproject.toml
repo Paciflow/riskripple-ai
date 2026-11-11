@@ -10,6 +10,12 @@ dependencies = [
     "networkx",
     "rapidfuzz",
     "boto3",
+    "strands-agents",
+    "strands-agents-tools",
+    "httpx",
+    "beautifulsoup4",
+    "lxml",
+    "tiktoken",
 ]
 
 [tool.setuptools.packages.find]

@@ -11,11 +11,9 @@ from rapidfuzz import fuzz, process
 from rapidfuzz.utils import default_process
 from strands import tool
 
+from riskripple.config import FIXTURES_DIR
 from riskripple.rag.chunking import chunk_document
 from riskripple.rag.retrieval import LocalLexicalRetriever, build_evidence_context
-
-REPO_ROOT = Path(__file__).resolve().parents[4]
-FIXTURES_DIR = REPO_ROOT / "data" / "fixtures"
 
 
 @tool

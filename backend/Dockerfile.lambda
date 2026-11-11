@@ -2,13 +2,24 @@
 # (rather than a zip + layer) is used because the dependency set (pandas, numpy,
 # scipy, networkx, strands-agents) comfortably exceeds the unzipped-size limits that
 # make zip-based Lambda layers fragile for scientific Python stacks.
+#
+# Build context is the REPO ROOT (not backend/), because the frozen demo data
+# snapshot under data/fixtures/ is baked into the image alongside the backend
+# source -- deliberately, not as a shortcut: the whole point of that snapshot is to
+# be an immutable, reproducible dataset (master spec section 6.4), so shipping it as
+# part of the deployed artifact is more reliable for a hackathon demo than fetching
+# it from S3 at cold start. Build with: docker build -f backend/Dockerfile.lambda .
+# (from the repo root), which is what infrastructure/cdk/lib/*.ts does.
 FROM public.ecr.aws/lambda/python:3.12
 
-COPY pyproject.toml ${LAMBDA_TASK_ROOT}/pyproject.toml
-COPY src/ ${LAMBDA_TASK_ROOT}/src/
+COPY backend/pyproject.toml ${LAMBDA_TASK_ROOT}/pyproject.toml
+COPY backend/src/ ${LAMBDA_TASK_ROOT}/src/
+COPY data/fixtures/ /opt/riskripple-fixtures/
 
 RUN pip install --no-cache-dir "${LAMBDA_TASK_ROOT}" -t ${LAMBDA_TASK_ROOT}
 
 ENV PYTHONPATH="${LAMBDA_TASK_ROOT}/src:${PYTHONPATH}"
+ENV RISKRIPPLE_FIXTURES_DIR="/opt/riskripple-fixtures"
+ENV RISKRIPPLE_REPORTS_DIR="/tmp/riskripple-reports"
 
 CMD ["riskripple.api.handlers.health.handler"]

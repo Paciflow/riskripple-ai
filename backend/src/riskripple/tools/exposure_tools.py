@@ -1,8 +1,6 @@
 """Agent 3 (Exposure and Contagion Mapper) tool surface."""
 from __future__ import annotations
 
-from pathlib import Path
-
 from rapidfuzz import fuzz
 from rapidfuzz.utils import default_process
 from strands import tool
@@ -17,8 +15,6 @@ from riskripple.graph.company_graph import (
 )
 from riskripple.schemas.models import ExposureEdge
 from riskripple.tools.regulatory_tools import retrieve_company_filings
-
-REPO_ROOT = Path(__file__).resolve().parents[4]
 
 
 # Ticker symbols don't fuzzy-match company names well ("Nvidia" vs "NVDA" scores ~36),

@@ -1,0 +1,11 @@
+.git/
+backend/.venv/
+backend/tests/
+frontend/node_modules/
+frontend/dist/
+infrastructure/cdk/node_modules/
+infrastructure/cdk/cdk.out/
+data/analysis/
+**/__pycache__/
+**/*.pyc
+.DS_Store
