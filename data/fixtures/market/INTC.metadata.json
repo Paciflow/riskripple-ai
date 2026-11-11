@@ -1,0 +1,11 @@
+{
+  "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+  "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/INTC?range=2y&interval=1d",
+  "retrieved_at": "2026-11-11T00:26:02.943637Z",
+  "observation_date": "2026-11-10",
+  "publication_date": null,
+  "currency": "USD",
+  "data_version": "e10ede98196166a6",
+  "content_hash": "e10ede98196166a6b2ecad59f4946da535f76d3b339a20b08d68e90cd45f8167",
+  "license_or_restriction": "Unofficial public endpoint, no documented SLA or terms for programmatic access; rate-limited (HTTP 429 observed under bursty requests). Read-only historical retrieval; not for redistribution."
+}

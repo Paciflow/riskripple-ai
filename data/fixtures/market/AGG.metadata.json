@@ -1,0 +1,11 @@
+{
+  "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+  "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/AGG?range=2y&interval=1d",
+  "retrieved_at": "2026-11-11T00:25:51.085069Z",
+  "observation_date": "2026-11-10",
+  "publication_date": null,
+  "currency": "USD",
+  "data_version": "70f7db905245cb27",
+  "content_hash": "70f7db905245cb27024ccceb3ab6fd9831d0c6f34ee01deada012d975d49ec37",
+  "license_or_restriction": "Unofficial public endpoint, no documented SLA or terms for programmatic access; rate-limited (HTTP 429 observed under bursty requests). Read-only historical retrieval; not for redistribution."
+}

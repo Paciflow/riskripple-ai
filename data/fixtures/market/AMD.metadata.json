@@ -1,0 +1,11 @@
+{
+  "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+  "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=2y&interval=1d",
+  "retrieved_at": "2026-11-11T00:25:59.969114Z",
+  "observation_date": "2026-11-10",
+  "publication_date": null,
+  "currency": "USD",
+  "data_version": "aa3fc60bd88ec80b",
+  "content_hash": "aa3fc60bd88ec80b0405a3d1194b749a9305408d857ad2ffbb8a9d6b35399e96",
+  "license_or_restriction": "Unofficial public endpoint, no documented SLA or terms for programmatic access; rate-limited (HTTP 429 observed under bursty requests). Read-only historical retrieval; not for redistribution."
+}

@@ -1,0 +1,26 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# Node / frontend
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# CDK
+infrastructure/cdk/cdk.out/
+infrastructure/cdk/node_modules/
+infrastructure/cdk/**/*.d.ts
+infrastructure/cdk/**/*.js
+!infrastructure/cdk/jest.config.js
+
+# Env / secrets
+.env
+.env.local
+*.pem
+
+# OS
+.DS_Store

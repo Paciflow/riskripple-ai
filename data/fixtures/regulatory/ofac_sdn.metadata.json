@@ -1,0 +1,11 @@
+{
+  "source_name": "OFAC Specially Designated Nationals (SDN) List",
+  "source_url": "https://wc2h-sls-prod-public-published.s3.us-gov-west-1.amazonaws.com/Published/9d85db50-f549-40e7-9749-1a1260e624b9/2026-11-09/e9b8bcc6-880c-4138-a8ad-8a02f444f69e/SDN.CSV?X-Amz-Expires=3600&X-Amz-Security-Token=FwoDYXdzEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDBJfAiSPGA%2BpWtz%2B%2BCLuBG7Il6oYsyGGENqbq98f1vLdO8xG5HZ8Djqduo6zeE2scQJJv9VewoIUEahyK2ae9SEG7NvJBB14fuMKlSRfSaq%2BWlMQ6g4tixxtRvVY5avMKmi0BKnsPWcnSVQmGRmScDrIg6dL60Fkbt1FcKbCLIt93yHpfBiaUc1Y6Rvr5T8slYFbAws0xs2rKR4a84HDMkLTK5LTcgJQkSMuMobwv8EbEzSaVdH0W5307bvTSG3Jzbj6kN5Mmwvj%2BW0gZUmnIxnqqXQcGdfqrGprPhvYdxaIhvSA%2FyGZVlV3eKU8LBQK8%2Bzorz9pkX%2BzgVqXnjpazDjOtkFyrwdUkz6MxDOXK8cQMCBMnHqxpLblKCMcqZ8BWAyyGQDWzPW7yrmRsr8wCHtl5KeartabebEjmMBvxaZpkDcMZJI2E3st1KqL11zW%2BxqBf0suneHRp9KQef4nEfG1OdmliVujCjjOHpuuga8RIeduHD9Rbem%2BsfJCy0i3iFCHpJF6UpgDvg6ZVuEWvrQlt4WgFB9%2FaxjG0IYUhdxb5nX%2BTAmQWMhRwaY4WYOxgjH2btWqsgmEkBLq4uycmRiaQC3HPN9l1MkRXZKohrZSPBmux8MFCpuaX9qnJpEB46c%2F7F5iCcv%2BIIB4jZdaRYN9rOJm7%2BsXHPE58EonJ0%2B%2B897Zbp5TrzulnN%2Fb6x3QuB8I4Dx8BPvhi9kR8elc%2Bow4EXEGcxrenTWIreJ4ETN%2BbIN3zqawOvFtTLT72V7KUg3o7QWJM6Txczd%2B%2FK%2BSFF1d8BhQMrR9yTwloYGl6y5wnaJChQd%2FKUALyQGiNz83q3uYv9tSnrYk506%2F3ZEopNXO1wYyQXqnn%2FYZIgnfNFi44gvRrbcUaoK0JFcvsOr%2FVZAs7ydLYMvjXgcQtviWODmpvSLSegZUojaK2zOvttsh%2B5c44akB&response-content-disposition=attachment%3B%20filename%3D%22sdn.csv%22&response-content-type=text%2Fcsv&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIASARBLFPLB7LKWELX%2F20261111%2Fus-gov-west-1%2Fs3%2Faws4_request&X-Amz-Date=20261111T002605Z&X-Amz-SignedHeaders=host&X-Amz-Signature=da426e0f96dc92df7a760f82a634b0b8b41a79af6c81a45d62fb95637aaa1ccc",
+  "retrieved_at": "2026-11-11T00:26:06.303661Z",
+  "observation_date": null,
+  "publication_date": null,
+  "currency": null,
+  "data_version": "7f43332dae0d1b78",
+  "content_hash": "7f43332dae0d1b78ce44c31692d87a3c66e4075bcd97e36d3f18585572ff55b8",
+  "license_or_restriction": "U.S. Treasury OFAC public sanctions data. Official source for U.S. sanctions screening; not a substitute for full legal compliance review."
+}
