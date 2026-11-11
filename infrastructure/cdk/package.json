@@ -1,0 +1,25 @@
+{
+  "name": "riskripple-infrastructure",
+  "version": "0.1.0",
+  "private": true,
+  "bin": {
+    "riskripple-infra": "bin/riskripple.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "synth": "cdk synth",
+    "diff": "cdk diff",
+    "deploy": "cdk deploy --all",
+    "destroy": "cdk destroy --all"
+  },
+  "devDependencies": {
+    "@types/node": "24.0.3",
+    "aws-cdk": "2.1148.0",
+    "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.276.0",
+    "constructs": "10.4.2"
+  }
+}

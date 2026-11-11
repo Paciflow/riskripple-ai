@@ -17,6 +17,9 @@ infrastructure/cdk/**/*.d.ts
 infrastructure/cdk/**/*.js
 !infrastructure/cdk/jest.config.js
 
+# Generated analysis outputs (run artifacts, not reproducible fixtures)
+data/analysis/
+
 # Env / secrets
 .env
 .env.local

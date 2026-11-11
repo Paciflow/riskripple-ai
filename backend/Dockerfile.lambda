@@ -1,0 +1,14 @@
+# Lambda container image for the RiskRipple API/agent handlers. A container image
+# (rather than a zip + layer) is used because the dependency set (pandas, numpy,
+# scipy, networkx, strands-agents) comfortably exceeds the unzipped-size limits that
+# make zip-based Lambda layers fragile for scientific Python stacks.
+FROM public.ecr.aws/lambda/python:3.12
+
+COPY pyproject.toml ${LAMBDA_TASK_ROOT}/pyproject.toml
+COPY src/ ${LAMBDA_TASK_ROOT}/src/
+
+RUN pip install --no-cache-dir "${LAMBDA_TASK_ROOT}" -t ${LAMBDA_TASK_ROOT}
+
+ENV PYTHONPATH="${LAMBDA_TASK_ROOT}/src:${PYTHONPATH}"
+
+CMD ["riskripple.api.handlers.health.handler"]
