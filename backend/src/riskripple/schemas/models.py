@@ -5,7 +5,7 @@ Large blobs (raw documents, reports, datasets) are referenced by S3 key, not emb
 """
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import Enum
 from typing import Literal
 from uuid import uuid4
@@ -39,7 +39,7 @@ class Portfolio(BaseModel):
     total_value: float = Field(gt=0)
     holdings: list[Holding]
     is_fictional: bool = True  # per spec section 3.2: simulation only, never presented as real
-    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
 class RegulatoryEvent(BaseModel):
@@ -120,7 +120,7 @@ class AnalysisResult(BaseModel):
     limitations: list[str] = Field(default_factory=list)
     model_identifier: str | None = None
     calculation_version: str = "finance-engine-0.1.0"
-    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     completed_at: datetime | None = None
 
 
@@ -136,7 +136,7 @@ class InvestigationReport(BaseModel):
     citations: list[SourceMetadata]
     limitations: list[str]
     next_steps: list[str]
-    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
 class AuditEvent(BaseModel):
@@ -149,4 +149,4 @@ class AuditEvent(BaseModel):
     duration_ms: float | None = None
     model_identifier: str | None = None
     detail: str | None = None
-    timestamp: datetime = Field(default_factory=datetime.utcnow)
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))

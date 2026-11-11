@@ -1,0 +1,148 @@
+{
+  "report_id": "rpt_dbe5965c2ab4",
+  "analysis_id": "ana_5dcae62c5823",
+  "investment_question": "How could 'semiconductor export restrictions on advanced computing chips to China' affect this portfolio?",
+  "event_summary": "semiconductor export restrictions on advanced computing chips to China",
+  "facts": [
+    "prudent: historical annualized return 16.2%, annualized volatility 13.5%, max drawdown -10.2% (from real historical price data).",
+    "equilibre: historical annualized return 27.7%, annualized volatility 24.1%, max drawdown -19.0% (from real historical price data).",
+    "audacieux: historical annualized return 40.4%, annualized volatility 36.7%, max drawdown -28.6% (from real historical price data)."
+  ],
+  "assumptions": [
+    "'severe' scenario: hypothetical, assumption-based asset shocks, not a forecast. Hardest hit: audacieux ($-5,200).",
+    "'mild' scenario: hypothetical, assumption-based asset shocks, not a forecast. Hardest hit: audacieux ($-800).",
+    "'moderate' scenario: hypothetical, assumption-based asset shocks, not a forecast. Hardest hit: audacieux ($-2,200)."
+  ],
+  "hypothetical_scenarios": [
+    "severe",
+    "mild",
+    "moderate"
+  ],
+  "ai_interpretations": [
+    "prudent's generated allocation violates its own policy constraints: single-asset weight on AGG (65.0%) exceeds persona max of 15.0%; equity sector concentration in technology (28.0% of total portfolio) exceeds persona max of 20.0%. This reflects a limited demo asset universe, not a recommended real allocation.",
+    "equilibre's generated allocation violates its own policy constraints: single-asset weight on AGG (35.0%) exceeds persona max of 25.0%; equity sector concentration in technology (52.0% of total portfolio) exceeds persona max of 35.0%. This reflects a limited demo asset universe, not a recommended real allocation.",
+    "audacieux's generated allocation violates its own policy constraints: equity sector concentration in technology (80.0% of total portfolio) exceeds persona max of 60.0%. This reflects a limited demo asset universe, not a recommended real allocation."
+  ],
+  "citations": [
+    {
+      "source_name": "SEC EDGAR filing 10-K (0001045810-26-000021)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+      "retrieved_at": "2026-11-11 00:29:05.534892+00:00",
+      "observation_date": null,
+      "publication_date": "2026-02-25",
+      "currency": null,
+      "data_version": "7dd1a4a422091eb3",
+      "content_hash": "7dd1a4a422091eb32f2715b1427af54bc64df7b6869298bfae40c4ad5fec3349",
+      "license_or_restriction": "U.S. public filing via SEC EDGAR."
+    },
+    {
+      "source_name": "SEC EDGAR filing 10-K (0000002488-26-000018)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm",
+      "retrieved_at": "2026-11-11 00:29:06.636639+00:00",
+      "observation_date": null,
+      "publication_date": "2026-02-04",
+      "currency": null,
+      "data_version": "33f1050a8d40c284",
+      "content_hash": "33f1050a8d40c284431382a6181782ff7353eb265f8d6749c3dd7cf405eb93e0",
+      "license_or_restriction": "U.S. public filing via SEC EDGAR."
+    },
+    {
+      "source_name": "SEC EDGAR filing 10-K (0000050863-26-000011)",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000011/intc-20251227.htm",
+      "retrieved_at": "2026-11-11 00:29:07.928524+00:00",
+      "observation_date": null,
+      "publication_date": "2026-01-23",
+      "currency": null,
+      "data_version": "7d2a1cac3e153db5",
+      "content_hash": "7d2a1cac3e153db5104c95a46a8fa8fa81efba128f20f3bc170d49762960984e",
+      "license_or_restriction": "U.S. public filing via SEC EDGAR."
+    },
+    {
+      "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d",
+      "retrieved_at": "2026-11-11 00:43:10.459664+00:00",
+      "observation_date": "2026-11-10",
+      "publication_date": null,
+      "currency": "USD",
+      "data_version": "demo-snapshot",
+      "content_hash": "n/a",
+      "license_or_restriction": "see docs/DATA_SOURCES.md"
+    },
+    {
+      "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?range=2y&interval=1d",
+      "retrieved_at": "2026-11-11 00:43:10.459664+00:00",
+      "observation_date": "2026-11-10",
+      "publication_date": null,
+      "currency": "USD",
+      "data_version": "demo-snapshot",
+      "content_hash": "n/a",
+      "license_or_restriction": "see docs/DATA_SOURCES.md"
+    },
+    {
+      "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=2y&interval=1d",
+      "retrieved_at": "2026-11-11 00:43:10.459664+00:00",
+      "observation_date": "2026-11-10",
+      "publication_date": null,
+      "currency": "USD",
+      "data_version": "demo-snapshot",
+      "content_hash": "n/a",
+      "license_or_restriction": "see docs/DATA_SOURCES.md"
+    },
+    {
+      "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=2y&interval=1d",
+      "retrieved_at": "2026-11-11 00:43:10.459664+00:00",
+      "observation_date": "2026-11-10",
+      "publication_date": null,
+      "currency": "USD",
+      "data_version": "demo-snapshot",
+      "content_hash": "n/a",
+      "license_or_restriction": "see docs/DATA_SOURCES.md"
+    },
+    {
+      "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/INTC?range=2y&interval=1d",
+      "retrieved_at": "2026-11-11 00:43:10.459664+00:00",
+      "observation_date": "2026-11-10",
+      "publication_date": null,
+      "currency": "USD",
+      "data_version": "demo-snapshot",
+      "content_hash": "n/a",
+      "license_or_restriction": "see docs/DATA_SOURCES.md"
+    },
+    {
+      "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/AGG?range=2y&interval=1d",
+      "retrieved_at": "2026-11-11 00:43:10.459664+00:00",
+      "observation_date": "2026-11-10",
+      "publication_date": null,
+      "currency": "USD",
+      "data_version": "demo-snapshot",
+      "content_hash": "n/a",
+      "license_or_restriction": "see docs/DATA_SOURCES.md"
+    },
+    {
+      "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+      "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/GLD?range=2y&interval=1d",
+      "retrieved_at": "2026-11-11 00:43:10.459664+00:00",
+      "observation_date": "2026-11-10",
+      "publication_date": null,
+      "currency": "USD",
+      "data_version": "demo-snapshot",
+      "content_hash": "n/a",
+      "license_or_restriction": "see docs/DATA_SOURCES.md"
+    }
+  ],
+  "limitations": [
+    "Exposure graph uses only literal supplier mentions found in the 3 semiconductor 10-Ks in the demo fixture set; absence of an edge means 'not found in this limited text', not 'confirmed no relationship'.",
+    "Stress scenario shocks are illustrative assumptions, not calibrated forecasts.",
+    "Exposure classification: {'SPY': {'portfolio_weight': 0.3, 'hop_distance_to_event': None, 'exposure_type': 'no_established_link'}, 'QQQ': {'portfolio_weight': 0.2, 'hop_distance_to_event': None, 'exposure_type': 'no_established_link'}, 'NVDA': {'portfolio_weight': 0.2, 'hop_distance_to_event': 1, 'exposure_type': 'indirect'}, 'AMD': {'portfolio_weight': 0.1, 'hop_distance_to_event': 1, 'exposure_type': 'indirect'}, 'INTC': {'portfolio_weight': 0.1, 'hop_distance_to_event': 1, 'exposure_type': 'indirect'}, 'AGG': {'portfolio_weight': 0.05, 'hop_distance_to_event': None, 'exposure_type': 'no_established_link'}, 'GLD': {'portfolio_weight': 0.05, 'hop_distance_to_event': None, 'exposure_type': 'no_established_link'}}"
+  ],
+  "next_steps": [
+    "Expand the supplier-relationship fixture set beyond 3 companies for broader coverage.",
+    "Verify Bedrock access on the hackathon AWS account and re-run via the live agent path."
+  ],
+  "created_at": "2026-11-11 00:43:10.565679+00:00"
+}
