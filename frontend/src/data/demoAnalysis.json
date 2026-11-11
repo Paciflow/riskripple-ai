@@ -1,0 +1,542 @@
+{
+  "analysis": {
+    "analysis_id": "ana_cac979c6d319",
+    "portfolio_id": "demo-portfolio",
+    "event_id": null,
+    "status": "complete",
+    "persona_evaluations": [
+      {
+        "persona": "prudent",
+        "proposed_weights": {
+          "SPY": 0.06999999999999999,
+          "QQQ": 0.06999999999999999,
+          "NVDA": 0.06999999999999999,
+          "AMD": 0.06999999999999999,
+          "INTC": 0.06999999999999999,
+          "AGG": 0.65
+        },
+        "annualized_return": 0.16241833869739652,
+        "annualized_volatility": 0.13455037824952484,
+        "sharpe_ratio": 1.2071191535128225,
+        "max_drawdown": -0.10243601739225638,
+        "herfindahl_index": 0.44700000000000006,
+        "constraint_violations": [
+          "single-asset weight on AGG (65.0%) exceeds persona max of 15.0%",
+          "equity sector concentration in technology (28.0% of total portfolio) exceeds persona max of 20.0%"
+        ],
+        "scenario_pnl": {
+          "mild": -279.99999999999994,
+          "moderate": -769.9999999999999,
+          "severe": -1819.9999999999995
+        }
+      },
+      {
+        "persona": "equilibre",
+        "proposed_weights": {
+          "SPY": 0.13,
+          "QQQ": 0.13,
+          "NVDA": 0.13,
+          "AMD": 0.13,
+          "INTC": 0.13,
+          "AGG": 0.35
+        },
+        "annualized_return": 0.27700658581644566,
+        "annualized_volatility": 0.2405720588412453,
+        "sharpe_ratio": 1.1514495372018398,
+        "max_drawdown": -0.18961695279550161,
+        "herfindahl_index": 0.207,
+        "constraint_violations": [
+          "single-asset weight on AGG (35.0%) exceeds persona max of 25.0%",
+          "equity sector concentration in technology (52.0% of total portfolio) exceeds persona max of 35.0%"
+        ],
+        "scenario_pnl": {
+          "mild": -520.0,
+          "moderate": -1430.0,
+          "severe": -3380.0
+        }
+      },
+      {
+        "persona": "audacieux",
+        "proposed_weights": {
+          "SPY": 0.2,
+          "QQQ": 0.2,
+          "NVDA": 0.2,
+          "AMD": 0.2,
+          "INTC": 0.2
+        },
+        "annualized_return": 0.40381888123639764,
+        "annualized_volatility": 0.3668388885526013,
+        "sharpe_ratio": 1.100807176768266,
+        "max_drawdown": -0.2860073644400096,
+        "herfindahl_index": 0.20000000000000004,
+        "constraint_violations": [
+          "equity sector concentration in technology (80.0% of total portfolio) exceeds persona max of 60.0%"
+        ],
+        "scenario_pnl": {
+          "mild": -800.0,
+          "moderate": -2200.0,
+          "severe": -5200.0
+        }
+      }
+    ],
+    "exposure_graph": {
+      "event_id": "demo-event",
+      "nodes": [
+        "NVDA",
+        "TSMC",
+        "Samsung",
+        "SK Hynix",
+        "Micron",
+        "Hon Hai (Foxconn)",
+        "Wistron",
+        "Fabrinet",
+        "AMD",
+        "INTC"
+      ],
+      "edges": [
+        {
+          "source": "NVDA",
+          "target": "TSMC",
+          "relationship_type": "supplier",
+          "evidence_source": "NVDA 10-K (https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm): \"We utilize foundries, such as Taiwan Semiconductor Manufacturing Company Limited, or TSMC, and Samsung Electronics Co., Ltd., or Samsung, to produce our semiconductor wafers.\"",
+          "observation_date": null,
+          "confidence": "verified"
+        },
+        {
+          "source": "NVDA",
+          "target": "Samsung",
+          "relationship_type": "supplier",
+          "evidence_source": "NVDA 10-K (https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm): \"We utilize foundries, such as Taiwan Semiconductor Manufacturing Company Limited, or TSMC, and Samsung Electronics Co., Ltd., or Samsung, to produce our semiconductor wafers.\"",
+          "observation_date": null,
+          "confidence": "verified"
+        },
+        {
+          "source": "NVDA",
+          "target": "SK Hynix",
+          "relationship_type": "supplier",
+          "evidence_source": "NVDA 10-K (https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm): \"We purchase memory from SK Hynix Inc., Micron Technology, Inc., and Samsung.\"",
+          "observation_date": null,
+          "confidence": "verified"
+        },
+        {
+          "source": "NVDA",
+          "target": "Micron",
+          "relationship_type": "supplier",
+          "evidence_source": "NVDA 10-K (https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm): \"We purchase memory from SK Hynix Inc., Micron Technology, Inc., and Samsung.\"",
+          "observation_date": null,
+          "confidence": "verified"
+        },
+        {
+          "source": "NVDA",
+          "target": "Hon Hai (Foxconn)",
+          "relationship_type": "supplier",
+          "evidence_source": "NVDA 10-K (https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm): \"We engage with independent subcontractors and contract manufacturers such as Hon Hai Precision Industry Co., Ltd., Wistron Corporation, and Fabrinet to perform assembly, testing and packaging of our final products.\"",
+          "observation_date": null,
+          "confidence": "verified"
+        },
+        {
+          "source": "NVDA",
+          "target": "Wistron",
+          "relationship_type": "supplier",
+          "evidence_source": "NVDA 10-K (https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm): \"We engage with independent subcontractors and contract manufacturers such as Hon Hai Precision Industry Co., Ltd., Wistron Corporation, and Fabrinet to perform assembly, testing and packaging of our final products.\"",
+          "observation_date": null,
+          "confidence": "verified"
+        },
+        {
+          "source": "NVDA",
+          "target": "Fabrinet",
+          "relationship_type": "supplier",
+          "evidence_source": "NVDA 10-K (https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm): \"We engage with independent subcontractors and contract manufacturers such as Hon Hai Precision Industry Co., Ltd., Wistron Corporation, and Fabrinet to perform assembly, testing and packaging of our final products.\"",
+          "observation_date": null,
+          "confidence": "verified"
+        },
+        {
+          "source": "AMD",
+          "target": "TSMC",
+          "relationship_type": "supplier",
+          "evidence_source": "AMD 10-K (https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm): \"Manufacturing Arrangements and Assembly and Test Facilities\nThird-Party Wafer Foundry Facilities\nWe utilize Taiwan Semiconductor Manufacturing Company Limited (TSMC) for the production of wafers for our HPC, FPGA and adaptive SoC products and GLOBALFOUNDRIES Inc.\"",
+          "observation_date": null,
+          "confidence": "verified"
+        },
+        {
+          "source": "AMD",
+          "target": "Samsung",
+          "relationship_type": "supplier",
+          "evidence_source": "AMD 10-K (https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm): \"Additionally, we utilize TSMC, United Microelectronics Corporation (UMC) and Samsung Electronics Co., Ltd.\"",
+          "observation_date": null,
+          "confidence": "verified"
+        },
+        {
+          "source": "INTC",
+          "target": "TSMC",
+          "relationship_type": "supplier",
+          "evidence_source": "INTC 10-K (https://www.sec.gov/Archives/edgar/data/50863/000005086326000011/intc-20251227.htm): \"In such event, we would expect, over time, to shift manufacturing to third-party foundries, particularly TSMC, as we develop products for nodes beyond Intel 18A and its derivative node, Intel 18A-P.\"",
+          "observation_date": null,
+          "confidence": "verified"
+        },
+        {
+          "source": "INTC",
+          "target": "Samsung",
+          "relationship_type": "supplier",
+          "evidence_source": "INTC 10-K (https://www.sec.gov/Archives/edgar/data/50863/000005086326000011/intc-20251227.htm): \"We believe we are one of three companies (the others being TSMC and Samsung) investing in 2nm lithography and next-generation transistor architectures to deliver continued improvements in performance and efficiency for semiconductor logic chips.\"",
+          "observation_date": null,
+          "confidence": "verified"
+        }
+      ]
+    },
+    "evidence_citations": [
+      {
+        "source_name": "SEC EDGAR filing 10-K (0001045810-26-000021)",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+        "retrieved_at": "2026-11-11T00:29:05.534892Z",
+        "observation_date": null,
+        "publication_date": "2026-02-25",
+        "currency": null,
+        "data_version": "7dd1a4a422091eb3",
+        "content_hash": "7dd1a4a422091eb32f2715b1427af54bc64df7b6869298bfae40c4ad5fec3349",
+        "license_or_restriction": "U.S. public filing via SEC EDGAR."
+      },
+      {
+        "source_name": "SEC EDGAR filing 10-K (0000002488-26-000018)",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm",
+        "retrieved_at": "2026-11-11T00:29:06.636639Z",
+        "observation_date": null,
+        "publication_date": "2026-02-04",
+        "currency": null,
+        "data_version": "33f1050a8d40c284",
+        "content_hash": "33f1050a8d40c284431382a6181782ff7353eb265f8d6749c3dd7cf405eb93e0",
+        "license_or_restriction": "U.S. public filing via SEC EDGAR."
+      },
+      {
+        "source_name": "SEC EDGAR filing 10-K (0000050863-26-000011)",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000011/intc-20251227.htm",
+        "retrieved_at": "2026-11-11T00:29:07.928524Z",
+        "observation_date": null,
+        "publication_date": "2026-01-23",
+        "currency": null,
+        "data_version": "7d2a1cac3e153db5",
+        "content_hash": "7d2a1cac3e153db5104c95a46a8fa8fa81efba128f20f3bc170d49762960984e",
+        "license_or_restriction": "U.S. public filing via SEC EDGAR."
+      },
+      {
+        "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d",
+        "retrieved_at": "2026-11-11T01:05:51.236587Z",
+        "observation_date": "2026-11-10",
+        "publication_date": null,
+        "currency": "USD",
+        "data_version": "demo-snapshot",
+        "content_hash": "n/a",
+        "license_or_restriction": "see docs/DATA_SOURCES.md"
+      },
+      {
+        "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?range=2y&interval=1d",
+        "retrieved_at": "2026-11-11T01:05:51.236587Z",
+        "observation_date": "2026-11-10",
+        "publication_date": null,
+        "currency": "USD",
+        "data_version": "demo-snapshot",
+        "content_hash": "n/a",
+        "license_or_restriction": "see docs/DATA_SOURCES.md"
+      },
+      {
+        "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=2y&interval=1d",
+        "retrieved_at": "2026-11-11T01:05:51.236587Z",
+        "observation_date": "2026-11-10",
+        "publication_date": null,
+        "currency": "USD",
+        "data_version": "demo-snapshot",
+        "content_hash": "n/a",
+        "license_or_restriction": "see docs/DATA_SOURCES.md"
+      },
+      {
+        "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=2y&interval=1d",
+        "retrieved_at": "2026-11-11T01:05:51.236587Z",
+        "observation_date": "2026-11-10",
+        "publication_date": null,
+        "currency": "USD",
+        "data_version": "demo-snapshot",
+        "content_hash": "n/a",
+        "license_or_restriction": "see docs/DATA_SOURCES.md"
+      },
+      {
+        "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/INTC?range=2y&interval=1d",
+        "retrieved_at": "2026-11-11T01:05:51.236587Z",
+        "observation_date": "2026-11-10",
+        "publication_date": null,
+        "currency": "USD",
+        "data_version": "demo-snapshot",
+        "content_hash": "n/a",
+        "license_or_restriction": "see docs/DATA_SOURCES.md"
+      },
+      {
+        "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/AGG?range=2y&interval=1d",
+        "retrieved_at": "2026-11-11T01:05:51.236587Z",
+        "observation_date": "2026-11-10",
+        "publication_date": null,
+        "currency": "USD",
+        "data_version": "demo-snapshot",
+        "content_hash": "n/a",
+        "license_or_restriction": "see docs/DATA_SOURCES.md"
+      },
+      {
+        "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/GLD?range=2y&interval=1d",
+        "retrieved_at": "2026-11-11T01:05:51.236587Z",
+        "observation_date": "2026-11-10",
+        "publication_date": null,
+        "currency": "USD",
+        "data_version": "demo-snapshot",
+        "content_hash": "n/a",
+        "license_or_restriction": "see docs/DATA_SOURCES.md"
+      }
+    ],
+    "assumptions": [
+      "'moderate' scenario: hypothetical, assumption-based asset shocks, not a forecast. Hardest hit: audacieux ($-2,200).",
+      "'mild' scenario: hypothetical, assumption-based asset shocks, not a forecast. Hardest hit: audacieux ($-800).",
+      "'severe' scenario: hypothetical, assumption-based asset shocks, not a forecast. Hardest hit: audacieux ($-5,200)."
+    ],
+    "limitations": [
+      "Exposure graph uses only literal supplier mentions found in the 3 semiconductor 10-Ks in the demo fixture set; absence of an edge means 'not found in this limited text', not 'confirmed no relationship'.",
+      "Stress scenario shocks are illustrative assumptions, not calibrated forecasts.",
+      "Exposure classification: {'SPY': {'portfolio_weight': 0.3, 'hop_distance_to_event': None, 'exposure_type': 'no_established_link'}, 'QQQ': {'portfolio_weight': 0.2, 'hop_distance_to_event': None, 'exposure_type': 'no_established_link'}, 'NVDA': {'portfolio_weight': 0.2, 'hop_distance_to_event': 1, 'exposure_type': 'indirect'}, 'AMD': {'portfolio_weight': 0.1, 'hop_distance_to_event': 1, 'exposure_type': 'indirect'}, 'INTC': {'portfolio_weight': 0.1, 'hop_distance_to_event': 1, 'exposure_type': 'indirect'}, 'AGG': {'portfolio_weight': 0.05, 'hop_distance_to_event': None, 'exposure_type': 'no_established_link'}, 'GLD': {'portfolio_weight': 0.05, 'hop_distance_to_event': None, 'exposure_type': 'no_established_link'}}"
+    ],
+    "model_identifier": null,
+    "calculation_version": "finance-engine-0.1.0",
+    "created_at": "2026-11-11T01:05:51.236587Z",
+    "completed_at": null
+  },
+  "report": {
+    "report_id": "rpt_472557241102",
+    "analysis_id": "ana_cac979c6d319",
+    "investment_question": "How could 'Semiconductor export restrictions on advanced computing chips to China' affect this portfolio?",
+    "event_summary": "Semiconductor export restrictions on advanced computing chips to China",
+    "facts": [
+      "prudent: historical annualized return 16.2%, annualized volatility 13.5%, max drawdown -10.2% (from real historical price data).",
+      "equilibre: historical annualized return 27.7%, annualized volatility 24.1%, max drawdown -19.0% (from real historical price data).",
+      "audacieux: historical annualized return 40.4%, annualized volatility 36.7%, max drawdown -28.6% (from real historical price data)."
+    ],
+    "assumptions": [
+      "'moderate' scenario: hypothetical, assumption-based asset shocks, not a forecast. Hardest hit: audacieux ($-2,200).",
+      "'mild' scenario: hypothetical, assumption-based asset shocks, not a forecast. Hardest hit: audacieux ($-800).",
+      "'severe' scenario: hypothetical, assumption-based asset shocks, not a forecast. Hardest hit: audacieux ($-5,200)."
+    ],
+    "hypothetical_scenarios": [
+      "moderate",
+      "mild",
+      "severe"
+    ],
+    "ai_interpretations": [
+      "prudent's generated allocation violates its own policy constraints: single-asset weight on AGG (65.0%) exceeds persona max of 15.0%; equity sector concentration in technology (28.0% of total portfolio) exceeds persona max of 20.0%. This reflects a limited demo asset universe, not a recommended real allocation.",
+      "equilibre's generated allocation violates its own policy constraints: single-asset weight on AGG (35.0%) exceeds persona max of 25.0%; equity sector concentration in technology (52.0% of total portfolio) exceeds persona max of 35.0%. This reflects a limited demo asset universe, not a recommended real allocation.",
+      "audacieux's generated allocation violates its own policy constraints: equity sector concentration in technology (80.0% of total portfolio) exceeds persona max of 60.0%. This reflects a limited demo asset universe, not a recommended real allocation."
+    ],
+    "citations": [
+      {
+        "source_name": "SEC EDGAR filing 10-K (0001045810-26-000021)",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+        "retrieved_at": "2026-11-11T00:29:05.534892Z",
+        "observation_date": null,
+        "publication_date": "2026-02-25",
+        "currency": null,
+        "data_version": "7dd1a4a422091eb3",
+        "content_hash": "7dd1a4a422091eb32f2715b1427af54bc64df7b6869298bfae40c4ad5fec3349",
+        "license_or_restriction": "U.S. public filing via SEC EDGAR."
+      },
+      {
+        "source_name": "SEC EDGAR filing 10-K (0000002488-26-000018)",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm",
+        "retrieved_at": "2026-11-11T00:29:06.636639Z",
+        "observation_date": null,
+        "publication_date": "2026-02-04",
+        "currency": null,
+        "data_version": "33f1050a8d40c284",
+        "content_hash": "33f1050a8d40c284431382a6181782ff7353eb265f8d6749c3dd7cf405eb93e0",
+        "license_or_restriction": "U.S. public filing via SEC EDGAR."
+      },
+      {
+        "source_name": "SEC EDGAR filing 10-K (0000050863-26-000011)",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000011/intc-20251227.htm",
+        "retrieved_at": "2026-11-11T00:29:07.928524Z",
+        "observation_date": null,
+        "publication_date": "2026-01-23",
+        "currency": null,
+        "data_version": "7d2a1cac3e153db5",
+        "content_hash": "7d2a1cac3e153db5104c95a46a8fa8fa81efba128f20f3bc170d49762960984e",
+        "license_or_restriction": "U.S. public filing via SEC EDGAR."
+      },
+      {
+        "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=2y&interval=1d",
+        "retrieved_at": "2026-11-11T01:05:51.236587Z",
+        "observation_date": "2026-11-10",
+        "publication_date": null,
+        "currency": "USD",
+        "data_version": "demo-snapshot",
+        "content_hash": "n/a",
+        "license_or_restriction": "see docs/DATA_SOURCES.md"
+      },
+      {
+        "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?range=2y&interval=1d",
+        "retrieved_at": "2026-11-11T01:05:51.236587Z",
+        "observation_date": "2026-11-10",
+        "publication_date": null,
+        "currency": "USD",
+        "data_version": "demo-snapshot",
+        "content_hash": "n/a",
+        "license_or_restriction": "see docs/DATA_SOURCES.md"
+      },
+      {
+        "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=2y&interval=1d",
+        "retrieved_at": "2026-11-11T01:05:51.236587Z",
+        "observation_date": "2026-11-10",
+        "publication_date": null,
+        "currency": "USD",
+        "data_version": "demo-snapshot",
+        "content_hash": "n/a",
+        "license_or_restriction": "see docs/DATA_SOURCES.md"
+      },
+      {
+        "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=2y&interval=1d",
+        "retrieved_at": "2026-11-11T01:05:51.236587Z",
+        "observation_date": "2026-11-10",
+        "publication_date": null,
+        "currency": "USD",
+        "data_version": "demo-snapshot",
+        "content_hash": "n/a",
+        "license_or_restriction": "see docs/DATA_SOURCES.md"
+      },
+      {
+        "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/INTC?range=2y&interval=1d",
+        "retrieved_at": "2026-11-11T01:05:51.236587Z",
+        "observation_date": "2026-11-10",
+        "publication_date": null,
+        "currency": "USD",
+        "data_version": "demo-snapshot",
+        "content_hash": "n/a",
+        "license_or_restriction": "see docs/DATA_SOURCES.md"
+      },
+      {
+        "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/AGG?range=2y&interval=1d",
+        "retrieved_at": "2026-11-11T01:05:51.236587Z",
+        "observation_date": "2026-11-10",
+        "publication_date": null,
+        "currency": "USD",
+        "data_version": "demo-snapshot",
+        "content_hash": "n/a",
+        "license_or_restriction": "see docs/DATA_SOURCES.md"
+      },
+      {
+        "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/GLD?range=2y&interval=1d",
+        "retrieved_at": "2026-11-11T01:05:51.236587Z",
+        "observation_date": "2026-11-10",
+        "publication_date": null,
+        "currency": "USD",
+        "data_version": "demo-snapshot",
+        "content_hash": "n/a",
+        "license_or_restriction": "see docs/DATA_SOURCES.md"
+      }
+    ],
+    "limitations": [
+      "Exposure graph uses only literal supplier mentions found in the 3 semiconductor 10-Ks in the demo fixture set; absence of an edge means 'not found in this limited text', not 'confirmed no relationship'.",
+      "Stress scenario shocks are illustrative assumptions, not calibrated forecasts.",
+      "Exposure classification: {'SPY': {'portfolio_weight': 0.3, 'hop_distance_to_event': None, 'exposure_type': 'no_established_link'}, 'QQQ': {'portfolio_weight': 0.2, 'hop_distance_to_event': None, 'exposure_type': 'no_established_link'}, 'NVDA': {'portfolio_weight': 0.2, 'hop_distance_to_event': 1, 'exposure_type': 'indirect'}, 'AMD': {'portfolio_weight': 0.1, 'hop_distance_to_event': 1, 'exposure_type': 'indirect'}, 'INTC': {'portfolio_weight': 0.1, 'hop_distance_to_event': 1, 'exposure_type': 'indirect'}, 'AGG': {'portfolio_weight': 0.05, 'hop_distance_to_event': None, 'exposure_type': 'no_established_link'}, 'GLD': {'portfolio_weight': 0.05, 'hop_distance_to_event': None, 'exposure_type': 'no_established_link'}}"
+    ],
+    "next_steps": [
+      "Expand the supplier-relationship fixture set beyond 3 companies for broader coverage.",
+      "Verify Bedrock access on the hackathon AWS account and re-run via the live agent path."
+    ],
+    "created_at": "2026-11-11T01:05:51.346205Z"
+  },
+  "held_portfolio": {
+    "weights": {
+      "SPY": 0.3,
+      "QQQ": 0.2,
+      "NVDA": 0.2,
+      "AMD": 0.1,
+      "INTC": 0.1,
+      "AGG": 0.05,
+      "GLD": 0.05
+    },
+    "annualized_return": 0.27440780661701836,
+    "annualized_volatility": 0.2703601369549253,
+    "sharpe_ratio": 1.014971399658552,
+    "max_drawdown": -0.22784103843980297
+  },
+  "correlation_matrix": {
+    "SPY": {
+      "SPY": 1.0,
+      "QQQ": 0.9473,
+      "NVDA": 0.6897,
+      "AMD": 0.6255,
+      "INTC": 0.464,
+      "AGG": 0.2079,
+      "GLD": 0.1918
+    },
+    "QQQ": {
+      "SPY": 0.9473,
+      "QQQ": 1.0,
+      "NVDA": 0.7373,
+      "AMD": 0.7294,
+      "INTC": 0.5585,
+      "AGG": 0.1499,
+      "GLD": 0.2096
+    },
+    "NVDA": {
+      "SPY": 0.6897,
+      "QQQ": 0.7373,
+      "NVDA": 1.0,
+      "AMD": 0.5322,
+      "INTC": 0.3602,
+      "AGG": 0.0233,
+      "GLD": 0.136
+    },
+    "AMD": {
+      "SPY": 0.6255,
+      "QQQ": 0.7294,
+      "NVDA": 0.5322,
+      "AMD": 1.0,
+      "INTC": 0.557,
+      "AGG": 0.0636,
+      "GLD": 0.2022
+    },
+    "INTC": {
+      "SPY": 0.464,
+      "QQQ": 0.5585,
+      "NVDA": 0.3602,
+      "AMD": 0.557,
+      "INTC": 1.0,
+      "AGG": 0.0921,
+      "GLD": 0.1614
+    },
+    "AGG": {
+      "SPY": 0.2079,
+      "QQQ": 0.1499,
+      "NVDA": 0.0233,
+      "AMD": 0.0636,
+      "INTC": 0.0921,
+      "AGG": 1.0,
+      "GLD": 0.1965
+    },
+    "GLD": {
+      "SPY": 0.1918,
+      "QQQ": 0.2096,
+      "NVDA": 0.136,
+      "AMD": 0.2022,
+      "INTC": 0.1614,
+      "AGG": 0.1965,
+      "GLD": 1.0
+    }
+  }
+}

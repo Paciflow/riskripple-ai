@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #0b1220;
+  --color-surface: #121a2b;
+  --color-surface-2: #1a2438;
+  --color-border: #263249;
+  --color-text: #e6ebf5;
+  --color-text-dim: #93a1bd;
+  --color-accent: #4f9cf9;
+  --color-good: #34d399;
+  --color-bad: #f87171;
+  --color-warn: #fbbf24;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+}

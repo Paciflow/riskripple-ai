@@ -1,0 +1,72 @@
+import { DEMO_ANALYSIS } from '../lib/api'
+import { Card, PageHeader, SimulationBanner, StatCard } from '../components/ui'
+
+function correlationColor(v: number): string {
+  // -1 -> red, 0 -> neutral surface, 1 -> blue, interpolated.
+  if (v >= 0) {
+    const alpha = v * 0.8
+    return `rgba(79,156,249,${alpha})`
+  }
+  const alpha = -v * 0.8
+  return `rgba(248,113,113,${alpha})`
+}
+
+export default function PortfolioAnalyzer() {
+  const { held_portfolio, correlation_matrix } = DEMO_ANALYSIS
+  const symbols = Object.keys(correlation_matrix)
+
+  return (
+    <div>
+      <PageHeader title="Portfolio Analyzer" subtitle="Historical risk metrics computed from real adjusted-close price data." />
+      <SimulationBanner />
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <StatCard label="Annualized Return" value={`${(held_portfolio.annualized_return * 100).toFixed(1)}%`} tone="good" />
+        <StatCard label="Annualized Volatility" value={`${(held_portfolio.annualized_volatility * 100).toFixed(1)}%`} tone="warn" />
+        <StatCard label="Sharpe Ratio (rf=0)" value={held_portfolio.sharpe_ratio.toFixed(2)} />
+        <StatCard label="Max Drawdown" value={`${(held_portfolio.max_drawdown * 100).toFixed(1)}%`} tone="bad" />
+      </div>
+
+      <Card>
+        <h3 className="text-sm font-medium mb-4" style={{ color: 'var(--color-text-dim)' }}>
+          Correlation Matrix
+        </h3>
+        <div className="overflow-x-auto">
+          <table className="text-xs border-collapse">
+            <thead>
+              <tr>
+                <th className="p-2" />
+                {symbols.map((s) => (
+                  <th key={s} className="p-2 font-medium" style={{ color: 'var(--color-text-dim)' }}>
+                    {s}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {symbols.map((row) => (
+                <tr key={row}>
+                  <td className="p-2 font-medium" style={{ color: 'var(--color-text-dim)' }}>
+                    {row}
+                  </td>
+                  {symbols.map((col) => (
+                    <td
+                      key={col}
+                      className="p-2 text-center rounded"
+                      style={{ background: correlationColor(correlation_matrix[row][col]) }}
+                    >
+                      {correlation_matrix[row][col].toFixed(2)}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-3 text-xs" style={{ color: 'var(--color-text-dim)' }}>
+          Pearson correlation of daily returns, computed over the aligned trading calendar of the demo snapshot.
+        </p>
+      </Card>
+    </div>
+  )
+}
