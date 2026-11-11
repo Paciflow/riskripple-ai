@@ -19,7 +19,14 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT / "backend" / "src"))
 
-from riskripple.ingestion import market_data, sanctions_ofac, sanctions_gac, macro_fred, filings_sec  # noqa: E402
+from riskripple.ingestion import (  # noqa: E402
+    market_data,
+    sanctions_ofac,
+    sanctions_gac,
+    macro_fred,
+    filings_sec,
+    regulatory_events,
+)
 
 FIXTURES_DIR = REPO_ROOT / "data" / "fixtures"
 
@@ -72,6 +79,28 @@ def build_sanctions_snapshots(manifest: dict) -> None:
     manifest["gac_consolidated"] = {"records": len(gac.records), "content_hash": gac.metadata.content_hash}
 
 
+def build_regulatory_events_snapshot(manifest: dict) -> None:
+    out_dir = FIXTURES_DIR / "regulatory"
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    print("[regulatory] fetching Federal Register semiconductor export-control documents ...")
+    result = regulatory_events.search_documents(
+        term="semiconductor export",
+        agency_slugs=[regulatory_events.BIS_AGENCY_SLUG],
+        per_page=20,
+    )
+    (out_dir / "federal_register_bis_semiconductor.json").write_text(
+        json.dumps([d.__dict__ for d in result.documents], indent=2)
+    )
+    (out_dir / "federal_register_bis_semiconductor.metadata.json").write_text(
+        result.metadata.model_dump_json(indent=2)
+    )
+    manifest["federal_register_bis_semiconductor"] = {
+        "documents": len(result.documents),
+        "content_hash": result.metadata.content_hash,
+    }
+
+
 def build_macro_snapshots(manifest: dict) -> None:
     out_dir = FIXTURES_DIR / "macro"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -119,6 +148,7 @@ def main() -> None:
 
     build_market_snapshots(manifest)
     build_sanctions_snapshots(manifest)
+    build_regulatory_events_snapshot(manifest)
     build_macro_snapshots(manifest)
     build_filings_snapshots(manifest)
 

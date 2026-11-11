@@ -1,44 +1,44 @@
 {
-  "built_at": "2026-11-11T00:25:45.675310+00:00",
+  "built_at": "2026-11-11T00:28:42.712087+00:00",
   "market": {
     "SPY": {
       "rows": 501,
-      "content_hash": "b7e0a1fd55ea7d838178b844a93f4445efabcb14852238c02e4790eff7e89ca0",
+      "content_hash": "7e53d86075ac71bf18a5a83ae75ff597b30c30f51cf109b094487b2fe73fbce9",
       "observation_date": "2026-11-10"
     },
     "QQQ": {
       "rows": 501,
-      "content_hash": "65d332631e7ec1485042ad3e415616cad13fee6dccfc00fec624aee2c729dcd3",
+      "content_hash": "ab606d80eafc13a54078f7e116b73f031d886fcc490529b7ae01837db064c1b2",
       "observation_date": "2026-11-10"
     },
     "AGG": {
       "rows": 501,
-      "content_hash": "70f7db905245cb27024ccceb3ab6fd9831d0c6f34ee01deada012d975d49ec37",
+      "content_hash": "ea365d24ce1a59104e976266e8098c2f875a2426c23070e41ac7af7342e2b9b6",
       "observation_date": "2026-11-10"
     },
     "GLD": {
       "rows": 501,
-      "content_hash": "17fb7a697a0432e95b7e33f796d9b5aae015b499f99de9406899c73789fb3743",
+      "content_hash": "e2f8247573dc19bc9c287c8b829776f3504a2a3ff3ac84b10e1fe7af9c5e3009",
       "observation_date": "2026-11-10"
     },
     "BIL": {
       "rows": 501,
-      "content_hash": "b29988aaad660214d5d927e004a0b7b42824aff9b5b2f884a954988c4a6152af",
+      "content_hash": "cf4db31a081ed1d4348d9a05b65450e3a59aee6de43de33e0a3a052fc45bf82f",
       "observation_date": "2026-11-10"
     },
     "NVDA": {
       "rows": 501,
-      "content_hash": "e847906b7121bae43e54ee9d6da261c60aae09beb8513fc629f512d2d1b08e71",
+      "content_hash": "2fbdc9318992612e57498357131f412540641f1a5380d6c26a3384aa60d50d1d",
       "observation_date": "2026-11-10"
     },
     "AMD": {
       "rows": 501,
-      "content_hash": "aa3fc60bd88ec80b0405a3d1194b749a9305408d857ad2ffbb8a9d6b35399e96",
+      "content_hash": "bfc72ac040a0bdfaecb8677b07911f2cca83b21db40f3fd7b8b4f906fece02b2",
       "observation_date": "2026-11-10"
     },
     "INTC": {
       "rows": 501,
-      "content_hash": "e10ede98196166a6b2ecad59f4946da535f76d3b339a20b08d68e90cd45f8167",
+      "content_hash": "67b071c7093de061357400eff00af98cfbced4911a7ccfab7f617ebf5cab5afb",
       "observation_date": "2026-11-10"
     }
   },
@@ -49,6 +49,10 @@
   "gac_consolidated": {
     "records": 5781,
     "content_hash": "6768368227404852f42514db78ade4fcbf0f9a9dea86a96eeaa42f24787b4052"
+  },
+  "federal_register_bis_semiconductor": {
+    "documents": 20,
+    "content_hash": "b597b91b17861a3ddc69e1c847d9845e9ff7da2c6a7f8f36190121e70013233f"
   },
   "macro": {
     "DGS10": {

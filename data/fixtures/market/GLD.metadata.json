@@ -1,11 +1,11 @@
 {
   "source_name": "Yahoo Finance (query1.finance.yahoo.com chart API)",
   "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/GLD?range=2y&interval=1d",
-  "retrieved_at": "2026-11-11T00:25:53.285662Z",
+  "retrieved_at": "2026-11-11T00:28:50.234717Z",
   "observation_date": "2026-11-10",
   "publication_date": null,
   "currency": "USD",
-  "data_version": "17fb7a697a0432e9",
-  "content_hash": "17fb7a697a0432e95b7e33f796d9b5aae015b499f99de9406899c73789fb3743",
+  "data_version": "e2f8247573dc19bc",
+  "content_hash": "e2f8247573dc19bc9c287c8b829776f3504a2a3ff3ac84b10e1fe7af9c5e3009",
   "license_or_restriction": "Unofficial public endpoint, no documented SLA or terms for programmatic access; rate-limited (HTTP 429 observed under bursty requests). Read-only historical retrieval; not for redistribution."
 }
