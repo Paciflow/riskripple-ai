@@ -23,10 +23,12 @@ foundries, such as Taiwan Semiconductor Manufacturing Company Limited, or TSMC..
 Emphasize: **every edge here came from a literal keyword match in real filing text,
 not an LLM guess.**
 
-## 4. Portfolio Analyzer (30s)
+## 4. Portfolio Analyzer (45s)
 
-Show the correlation matrix — real Pearson correlations from the aligned trading
-calendar.
+Upload a CSV (or just edit the weight boxes) in the "Live Portfolio Calculator" —
+real metrics recompute in the browser instantly, no backend call. Then scroll to
+the frozen scenario section below it and show the correlation matrix — real
+Pearson correlations from the aligned trading calendar.
 
 ## 5. Scenario Simulator (45s)
 

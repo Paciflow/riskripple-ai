@@ -1,5 +1,9 @@
 # AWS Deployment
 
+For the actual hackathon day — ordered steps, time budget, and what to do if each
+step fails — see `docs/HACKATHON_RUNBOOK.md`. This doc is the general reference;
+that one is the script to follow live.
+
 ## Prerequisites
 
 - AWS CLI configured with credentials for the target account

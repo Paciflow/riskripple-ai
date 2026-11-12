@@ -114,4 +114,5 @@ Before deploying for the hackathon demo: confirm `bedrock:InvokeModel` access an
 - [docs/TRADEOFFS.md](docs/TRADEOFFS.md) — design decisions and what was rejected, with why
 - [docs/COST_ESTIMATE.md](docs/COST_ESTIMATE.md) — cited AWS cost estimate (hackathon scale and beyond)
 - [docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md) — the 5-minute walkthrough
+- [docs/HACKATHON_RUNBOOK.md](docs/HACKATHON_RUNBOOK.md) — the exact ordered sequence for the live hackathon AWS account, with fallbacks
 - [docs/KNOWN_LIMITATIONS.md](docs/KNOWN_LIMITATIONS.md) — what's unverified and why
