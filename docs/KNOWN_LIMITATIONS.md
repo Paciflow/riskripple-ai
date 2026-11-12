@@ -119,7 +119,10 @@ inspection alone.
   store).
 - 25 frontend Vitest tests pass, covering the TS finance port and the portfolio CSV
   parser (`frontend/src/lib/finance.test.ts`, `portfolioCsv.test.ts`).
-- No RAG evaluation benchmark (section 16.2's 30-50 question set) has been built
-  yet — out of scope given the time available before the hackathon; flagged
-  rather than fabricated.
+- A 34-question RAG evaluation benchmark now exists
+  (`backend/src/riskripple/evaluation/rag_eval.py`, `python3 scripts/run_rag_eval.py`,
+  full writeup in `docs/EVALUATION.md`). It found and fixed a real retriever bug
+  (missing stopword filtering) and surfaced a genuine, documented precision/recall
+  tradeoff in `LocalLexicalRetriever`'s default relevance threshold — see
+  `docs/EVALUATION.md` rather than assuming retrieval is perfect.
 - No load/concurrency testing of the Lambda handlers.

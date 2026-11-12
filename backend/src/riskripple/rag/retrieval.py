@@ -25,9 +25,21 @@ from riskripple.rag.chunking import DocumentChunk
 
 _TOKEN_RE = re.compile(r"[a-z0-9]+")
 
+# Found via the RAG evaluation benchmark (backend/src/riskripple/evaluation/rag_eval.py):
+# without filtering these, a query sharing only function words with a large real
+# corpus (e.g. "...for homeowners", "...across Europe") still registers nonzero
+# cosine similarity against unrelated documents, since common words appear in most
+# chunks and their IDF isn't low enough to zero out the dot product. This is a
+# standard, minimal English stopword list, not a tuned one.
+_STOPWORDS = frozenset({
+    "a", "an", "and", "are", "as", "at", "be", "by", "for", "from", "has", "have",
+    "he", "in", "is", "it", "its", "of", "on", "or", "our", "that", "the", "their",
+    "this", "to", "was", "we", "were", "will", "with", "you",
+})
+
 
 def _tokenize(text: str) -> list[str]:
-    return _TOKEN_RE.findall(text.lower())
+    return [t for t in _TOKEN_RE.findall(text.lower()) if t not in _STOPWORDS]
 
 
 @dataclass
@@ -68,14 +80,25 @@ class LocalLexicalRetriever:
             return 0.0
         return numerator / (norm_a * norm_b)
 
-    def retrieve(self, query: str, *, top_k: int = 5, metadata_filter: dict | None = None) -> list[RetrievedChunk]:
+    def retrieve(
+        self, query: str, *, top_k: int = 5, metadata_filter: dict | None = None, min_score: float = 0.0
+    ) -> list[RetrievedChunk]:
+        """`min_score` defaults to 0.0 (any term overlap counts) for backward
+        compatibility. The RAG evaluation benchmark
+        (`riskripple.evaluation.rag_eval`, run via `scripts/run_rag_eval.py`) found
+        that over a realistically-sized real corpus, cosine scores for genuinely
+        unrelated queries topped out around 0.06 while true matches started above
+        0.23 — callers that need to say "no relevant evidence found" (e.g. before
+        asserting a regulatory/exposure link) should pass `min_score=0.15` rather
+        than treating "nonempty results" as "relevant results."
+        """
         query_vector = self._vector(Counter(_tokenize(query)))
         scored: list[RetrievedChunk] = []
         for chunk, doc_counts in zip(self.chunks, self._doc_term_counts):
             if metadata_filter and not _matches_filter(chunk, metadata_filter):
                 continue
             score = self._cosine(query_vector, self._vector(doc_counts))
-            if score > 0:
+            if score > min_score:
                 scored.append(RetrievedChunk(chunk=chunk, score=score))
         scored.sort(key=lambda r: r.score, reverse=True)
         return scored[:top_k]

@@ -106,5 +106,6 @@ Before deploying for the hackathon demo: confirm `bedrock:InvokeModel` access an
 - [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) — every source, with URL, license, and caveats
 - [docs/FINANCIAL_MODELS.md](docs/FINANCIAL_MODELS.md) — formulas and conventions
 - [docs/AGENTS.md](docs/AGENTS.md) — agent responsibilities, tools, prompts
+- [docs/EVALUATION.md](docs/EVALUATION.md) — RAG retrieval benchmark, with real results
 - [docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md) — the 5-minute walkthrough
 - [docs/KNOWN_LIMITATIONS.md](docs/KNOWN_LIMITATIONS.md) — what's unverified and why

@@ -1,0 +1,1143 @@
+{
+  "run_at": "2026-11-12T01:23:59.613082+00:00",
+  "corpus_chunks": 180,
+  "runs": [
+    {
+      "min_score": 0.0,
+      "summary": {
+        "n_cases": 34,
+        "hit_rate@1": 0.8529411764705882,
+        "hit_rate@3": 0.8823529411764706,
+        "mrr": 0.8627450980392156,
+        "keyword_accuracy": 0.9411764705882353,
+        "by_category": {
+          "federal_register_unique": {
+            "n": 15,
+            "hit_rate@1": 1.0,
+            "hit_rate@3": 1.0
+          },
+          "entity_list_generic": {
+            "n": 1,
+            "hit_rate@1": 1.0,
+            "hit_rate@3": 1.0
+          },
+          "entity_list_disambiguated": {
+            "n": 5,
+            "hit_rate@1": 0.8,
+            "hit_rate@3": 1.0
+          },
+          "filing_scoped": {
+            "n": 9,
+            "hit_rate@1": 1.0,
+            "hit_rate@3": 1.0
+          },
+          "negative_control": {
+            "n": 4,
+            "hit_rate@1": 0.0,
+            "hit_rate@3": 0.0
+          }
+        }
+      },
+      "cases": [
+        {
+          "query": "removing United Arab Emirates from stricter export control country group",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2026-14132"
+          ],
+          "retrieved_document_ids": [
+            "2026-14132",
+            "2025-17893",
+            "2024-25411",
+            "NVDA_10K",
+            "NVDA_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "changes to license review policy for advanced computing commodities",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2026-00789"
+          ],
+          "retrieved_document_ids": [
+            "2026-00789",
+            "2025-00636",
+            "2024-28270",
+            "2025-00711",
+            "2024-19633"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "revoking validated end-user authorizations in China",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2025-16735"
+          ],
+          "retrieved_document_ids": [
+            "2025-16735",
+            "2024-22587",
+            "2024-06067",
+            "2024-28267",
+            "2025-00636"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "national security investigation into semiconductor imports under Section 232",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2025-06591"
+          ],
+          "retrieved_document_ids": [
+            "2025-06591",
+            "2024-10485",
+            "2024-19633",
+            "2024-25411",
+            "2025-00636"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "additional due diligence requirements for advanced computing integrated circuits",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2025-00711"
+          ],
+          "retrieved_document_ids": [
+            "2025-00711",
+            "2025-00636",
+            "2024-28270",
+            "NVDA_10K",
+            "2024-07004"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "information and communications technology supply chain security for connected vehicles",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2025-00592"
+          ],
+          "retrieved_document_ids": [
+            "2025-00592",
+            "NVDA_10K",
+            "NVDA_10K",
+            "NVDA_10K",
+            "AMD_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "framework governing artificial intelligence chip diffusion exports",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2025-00636"
+          ],
+          "retrieved_document_ids": [
+            "2025-00636",
+            "2026-14132",
+            "NVDA_10K",
+            "NVDA_10K",
+            "2026-00789"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "foreign-produced direct product rule for advanced computing and semiconductor manufacturing items",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2024-28270"
+          ],
+          "retrieved_document_ids": [
+            "2024-28270",
+            "2024-28267",
+            "2024-28423",
+            "2024-07004",
+            "2025-00711"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "public briefing on changes to advanced computing semiconductor manufacturing export rules",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2024-28423"
+          ],
+          "retrieved_document_ids": [
+            "2024-28423",
+            "2024-07004",
+            "2024-28270",
+            "2025-00711",
+            "2025-00636"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "validated end user authorization expansion for data centers",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2024-22587"
+          ],
+          "retrieved_document_ids": [
+            "2024-22587",
+            "2025-16735",
+            "2025-00636",
+            "2024-06067",
+            "2024-28267"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "commerce control list additions for advanced technologies aligned with international partners",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2024-19633"
+          ],
+          "retrieved_document_ids": [
+            "2024-19633",
+            "2024-28270",
+            "2024-10485",
+            "2024-28267",
+            "2025-17893"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "defense priorities and allocations system regulation updates",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2024-15370"
+          ],
+          "retrieved_document_ids": [
+            "2024-15370",
+            "2024-07004",
+            "AMD_10K",
+            "INTC_10K",
+            "NVDA_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "export controls addressing Iranian aggression against Israel and support for Russia",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2024-08622"
+          ],
+          "retrieved_document_ids": [
+            "2024-08622",
+            "NVDA_10K",
+            "NVDA_10K",
+            "2024-25411",
+            "2024-19633"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "export controls on supercomputer and semiconductor end uses for advanced computing items",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2024-07004"
+          ],
+          "retrieved_document_ids": [
+            "2024-07004",
+            "2024-28270",
+            "2024-19633",
+            "2024-28267",
+            "NVDA_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "restrictions on persons identified on the specially designated nationals SDN list",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2024-06067"
+          ],
+          "retrieved_document_ids": [
+            "2024-06067",
+            "2024-10485",
+            "2024-19130",
+            "NVDA_10K",
+            "2024-25411"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "additions to the Entity List",
+          "category": "entity_list_generic",
+          "expected_document_ids": [
+            "2024-10485",
+            "2024-19130",
+            "2024-25411",
+            "2024-28267",
+            "2025-17893"
+          ],
+          "retrieved_document_ids": [
+            "2024-10485",
+            "2025-17893",
+            "2024-19130",
+            "2024-28267",
+            "2024-25411"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "140 entities added to the Entity List under China Japan South Korea and Singapore",
+          "category": "entity_list_disambiguated",
+          "expected_document_ids": [
+            "2024-28267"
+          ],
+          "retrieved_document_ids": [
+            "2024-28267",
+            "2024-19130",
+            "2024-25411",
+            "2024-10485",
+            "2025-17893"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "123 entities added to the Entity List including destinations Russia Kazakhstan Kyrgyzstan and Crimea",
+          "category": "entity_list_disambiguated",
+          "expected_document_ids": [
+            "2024-19130"
+          ],
+          "retrieved_document_ids": [
+            "2024-19130",
+            "2024-25411",
+            "2024-10485",
+            "2025-17893",
+            "2024-28267"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "37 entities added to the Entity List all under the destination of China",
+          "category": "entity_list_disambiguated",
+          "expected_document_ids": [
+            "2024-10485"
+          ],
+          "retrieved_document_ids": [
+            "2024-10485",
+            "2025-17893",
+            "2024-19130",
+            "2024-25411",
+            "2024-28267"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "32 entities added to the Entity List under Taiwan and United Arab Emirates destinations",
+          "category": "entity_list_disambiguated",
+          "expected_document_ids": [
+            "2025-17893"
+          ],
+          "retrieved_document_ids": [
+            "2024-19130",
+            "2024-25411",
+            "2025-17893",
+            "2024-10485",
+            "2024-28267"
+          ],
+          "hit_at_1": false,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "40 entities and four addresses added to the Entity List under Malaysia and Turkey",
+          "category": "entity_list_disambiguated",
+          "expected_document_ids": [
+            "2024-25411"
+          ],
+          "retrieved_document_ids": [
+            "2024-25411",
+            "2024-19130",
+            "2025-17893",
+            "2024-10485",
+            "2024-28267"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "export controls on advanced computing chips to China risk factor",
+          "category": "filing_scoped",
+          "expected_document_ids": [
+            "NVDA_10K"
+          ],
+          "retrieved_document_ids": [
+            "NVDA_10K",
+            "NVDA_10K",
+            "NVDA_10K",
+            "NVDA_10K",
+            "NVDA_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "foundry suppliers Taiwan Semiconductor Samsung and SK Hynix for wafer and memory production",
+          "category": "filing_scoped",
+          "expected_document_ids": [
+            "NVDA_10K"
+          ],
+          "retrieved_document_ids": [
+            "NVDA_10K",
+            "NVDA_10K",
+            "NVDA_10K",
+            "NVDA_10K",
+            "NVDA_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "cybersecurity incident risk to business operations and data",
+          "category": "filing_scoped",
+          "expected_document_ids": [
+            "NVDA_10K"
+          ],
+          "retrieved_document_ids": [
+            "NVDA_10K",
+            "NVDA_10K",
+            "NVDA_10K",
+            "NVDA_10K",
+            "NVDA_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "intellectual property litigation and patent infringement claims",
+          "category": "filing_scoped",
+          "expected_document_ids": [
+            "AMD_10K"
+          ],
+          "retrieved_document_ids": [
+            "AMD_10K",
+            "AMD_10K",
+            "AMD_10K",
+            "AMD_10K",
+            "AMD_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "reliance on Taiwan Semiconductor Manufacturing Company as third-party foundry",
+          "category": "filing_scoped",
+          "expected_document_ids": [
+            "AMD_10K"
+          ],
+          "retrieved_document_ids": [
+            "AMD_10K",
+            "AMD_10K",
+            "AMD_10K",
+            "AMD_10K",
+            "AMD_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "export administration regulations restricting sales to China",
+          "category": "filing_scoped",
+          "expected_document_ids": [
+            "AMD_10K"
+          ],
+          "retrieved_document_ids": [
+            "AMD_10K",
+            "AMD_10K",
+            "AMD_10K",
+            "AMD_10K",
+            "AMD_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "Intel Foundry Services manufacturing capacity and external foundry customers",
+          "category": "filing_scoped",
+          "expected_document_ids": [
+            "INTC_10K"
+          ],
+          "retrieved_document_ids": [
+            "INTC_10K",
+            "INTC_10K",
+            "INTC_10K",
+            "INTC_10K",
+            "INTC_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "export control risk affecting semiconductor sales and licensing",
+          "category": "filing_scoped",
+          "expected_document_ids": [
+            "INTC_10K"
+          ],
+          "retrieved_document_ids": [
+            "INTC_10K",
+            "INTC_10K",
+            "INTC_10K",
+            "INTC_10K",
+            "INTC_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": false
+        },
+        {
+          "query": "China revenue concentration risk to the business",
+          "category": "filing_scoped",
+          "expected_document_ids": [
+            "INTC_10K"
+          ],
+          "retrieved_document_ids": [
+            "INTC_10K",
+            "INTC_10K",
+            "INTC_10K",
+            "INTC_10K",
+            "INTC_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": false
+        },
+        {
+          "query": "best recipes for sourdough bread baking at home",
+          "category": "negative_control",
+          "expected_document_ids": [],
+          "retrieved_document_ids": [
+            "AMD_10K",
+            "AMD_10K",
+            "AMD_10K",
+            "AMD_10K",
+            "INTC_10K"
+          ],
+          "hit_at_1": false,
+          "hit_at_3": false,
+          "keyword_ok": true
+        },
+        {
+          "query": "fantasy football draft strategy for quarterbacks",
+          "category": "negative_control",
+          "expected_document_ids": [],
+          "retrieved_document_ids": [
+            "INTC_10K",
+            "INTC_10K",
+            "INTC_10K",
+            "NVDA_10K",
+            "INTC_10K"
+          ],
+          "hit_at_1": false,
+          "hit_at_3": false,
+          "keyword_ok": true
+        },
+        {
+          "query": "renewable solar panel installation costs for homeowners",
+          "category": "negative_control",
+          "expected_document_ids": [],
+          "retrieved_document_ids": [
+            "AMD_10K",
+            "INTC_10K",
+            "AMD_10K",
+            "NVDA_10K",
+            "NVDA_10K"
+          ],
+          "hit_at_1": false,
+          "hit_at_3": false,
+          "keyword_ok": true
+        },
+        {
+          "query": "backpacking travel itinerary across Europe on a budget",
+          "category": "negative_control",
+          "expected_document_ids": [],
+          "retrieved_document_ids": [
+            "NVDA_10K",
+            "AMD_10K",
+            "NVDA_10K",
+            "INTC_10K",
+            "AMD_10K"
+          ],
+          "hit_at_1": false,
+          "hit_at_3": false,
+          "keyword_ok": true
+        }
+      ]
+    },
+    {
+      "min_score": 0.15,
+      "summary": {
+        "n_cases": 34,
+        "hit_rate@1": 0.8823529411764706,
+        "hit_rate@3": 0.9117647058823529,
+        "mrr": 0.892156862745098,
+        "keyword_accuracy": 1.0,
+        "by_category": {
+          "federal_register_unique": {
+            "n": 15,
+            "hit_rate@1": 1.0,
+            "hit_rate@3": 1.0
+          },
+          "entity_list_generic": {
+            "n": 1,
+            "hit_rate@1": 1.0,
+            "hit_rate@3": 1.0
+          },
+          "entity_list_disambiguated": {
+            "n": 5,
+            "hit_rate@1": 0.8,
+            "hit_rate@3": 1.0
+          },
+          "filing_scoped": {
+            "n": 9,
+            "hit_rate@1": 0.6666666666666666,
+            "hit_rate@3": 0.6666666666666666
+          },
+          "negative_control": {
+            "n": 4,
+            "hit_rate@1": 1.0,
+            "hit_rate@3": 1.0
+          }
+        }
+      },
+      "cases": [
+        {
+          "query": "removing United Arab Emirates from stricter export control country group",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2026-14132"
+          ],
+          "retrieved_document_ids": [
+            "2026-14132"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "changes to license review policy for advanced computing commodities",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2026-00789"
+          ],
+          "retrieved_document_ids": [
+            "2026-00789",
+            "2025-00636",
+            "2024-28270"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "revoking validated end-user authorizations in China",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2025-16735"
+          ],
+          "retrieved_document_ids": [
+            "2025-16735"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "national security investigation into semiconductor imports under Section 232",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2025-06591"
+          ],
+          "retrieved_document_ids": [
+            "2025-06591"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "additional due diligence requirements for advanced computing integrated circuits",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2025-00711"
+          ],
+          "retrieved_document_ids": [
+            "2025-00711",
+            "2025-00636"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "information and communications technology supply chain security for connected vehicles",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2025-00592"
+          ],
+          "retrieved_document_ids": [
+            "2025-00592",
+            "NVDA_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "framework governing artificial intelligence chip diffusion exports",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2025-00636"
+          ],
+          "retrieved_document_ids": [
+            "2025-00636"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "foreign-produced direct product rule for advanced computing and semiconductor manufacturing items",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2024-28270"
+          ],
+          "retrieved_document_ids": [
+            "2024-28270",
+            "2024-28267",
+            "2024-28423",
+            "2024-07004",
+            "2025-00711"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "public briefing on changes to advanced computing semiconductor manufacturing export rules",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2024-28423"
+          ],
+          "retrieved_document_ids": [
+            "2024-28423",
+            "2024-07004",
+            "2024-28270",
+            "2025-00711"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "validated end user authorization expansion for data centers",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2024-22587"
+          ],
+          "retrieved_document_ids": [
+            "2024-22587",
+            "2025-16735",
+            "2025-00636",
+            "2024-06067"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "commerce control list additions for advanced technologies aligned with international partners",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2024-19633"
+          ],
+          "retrieved_document_ids": [
+            "2024-19633",
+            "2024-28270",
+            "2024-10485"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "defense priorities and allocations system regulation updates",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2024-15370"
+          ],
+          "retrieved_document_ids": [
+            "2024-15370"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "export controls addressing Iranian aggression against Israel and support for Russia",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2024-08622"
+          ],
+          "retrieved_document_ids": [
+            "2024-08622",
+            "NVDA_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "export controls on supercomputer and semiconductor end uses for advanced computing items",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2024-07004"
+          ],
+          "retrieved_document_ids": [
+            "2024-07004",
+            "2024-28270",
+            "2024-19633",
+            "2024-28267",
+            "NVDA_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "restrictions on persons identified on the specially designated nationals SDN list",
+          "category": "federal_register_unique",
+          "expected_document_ids": [
+            "2024-06067"
+          ],
+          "retrieved_document_ids": [
+            "2024-06067"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "additions to the Entity List",
+          "category": "entity_list_generic",
+          "expected_document_ids": [
+            "2024-10485",
+            "2024-19130",
+            "2024-25411",
+            "2024-28267",
+            "2025-17893"
+          ],
+          "retrieved_document_ids": [
+            "2024-10485",
+            "2025-17893",
+            "2024-19130",
+            "2024-28267",
+            "2024-25411"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "140 entities added to the Entity List under China Japan South Korea and Singapore",
+          "category": "entity_list_disambiguated",
+          "expected_document_ids": [
+            "2024-28267"
+          ],
+          "retrieved_document_ids": [
+            "2024-28267",
+            "2024-19130",
+            "2024-25411",
+            "2024-10485",
+            "2025-17893"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "123 entities added to the Entity List including destinations Russia Kazakhstan Kyrgyzstan and Crimea",
+          "category": "entity_list_disambiguated",
+          "expected_document_ids": [
+            "2024-19130"
+          ],
+          "retrieved_document_ids": [
+            "2024-19130",
+            "2024-25411",
+            "2024-10485",
+            "2025-17893",
+            "2024-28267"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "37 entities added to the Entity List all under the destination of China",
+          "category": "entity_list_disambiguated",
+          "expected_document_ids": [
+            "2024-10485"
+          ],
+          "retrieved_document_ids": [
+            "2024-10485",
+            "2025-17893",
+            "2024-19130",
+            "2024-25411",
+            "2024-28267"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "32 entities added to the Entity List under Taiwan and United Arab Emirates destinations",
+          "category": "entity_list_disambiguated",
+          "expected_document_ids": [
+            "2025-17893"
+          ],
+          "retrieved_document_ids": [
+            "2024-19130",
+            "2024-25411",
+            "2025-17893",
+            "2024-10485",
+            "2024-28267"
+          ],
+          "hit_at_1": false,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "40 entities and four addresses added to the Entity List under Malaysia and Turkey",
+          "category": "entity_list_disambiguated",
+          "expected_document_ids": [
+            "2024-25411"
+          ],
+          "retrieved_document_ids": [
+            "2024-25411",
+            "2024-19130",
+            "2025-17893",
+            "2024-10485",
+            "2024-28267"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "export controls on advanced computing chips to China risk factor",
+          "category": "filing_scoped",
+          "expected_document_ids": [
+            "NVDA_10K"
+          ],
+          "retrieved_document_ids": [
+            "NVDA_10K",
+            "NVDA_10K",
+            "NVDA_10K",
+            "NVDA_10K",
+            "NVDA_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "foundry suppliers Taiwan Semiconductor Samsung and SK Hynix for wafer and memory production",
+          "category": "filing_scoped",
+          "expected_document_ids": [
+            "NVDA_10K"
+          ],
+          "retrieved_document_ids": [
+            "NVDA_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "cybersecurity incident risk to business operations and data",
+          "category": "filing_scoped",
+          "expected_document_ids": [
+            "NVDA_10K"
+          ],
+          "retrieved_document_ids": [
+            "NVDA_10K",
+            "NVDA_10K",
+            "NVDA_10K",
+            "NVDA_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "intellectual property litigation and patent infringement claims",
+          "category": "filing_scoped",
+          "expected_document_ids": [
+            "AMD_10K"
+          ],
+          "retrieved_document_ids": [
+            "AMD_10K",
+            "AMD_10K",
+            "AMD_10K",
+            "AMD_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "reliance on Taiwan Semiconductor Manufacturing Company as third-party foundry",
+          "category": "filing_scoped",
+          "expected_document_ids": [
+            "AMD_10K"
+          ],
+          "retrieved_document_ids": [],
+          "hit_at_1": false,
+          "hit_at_3": false,
+          "keyword_ok": true
+        },
+        {
+          "query": "export administration regulations restricting sales to China",
+          "category": "filing_scoped",
+          "expected_document_ids": [
+            "AMD_10K"
+          ],
+          "retrieved_document_ids": [
+            "AMD_10K",
+            "AMD_10K",
+            "AMD_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "Intel Foundry Services manufacturing capacity and external foundry customers",
+          "category": "filing_scoped",
+          "expected_document_ids": [
+            "INTC_10K"
+          ],
+          "retrieved_document_ids": [
+            "INTC_10K",
+            "INTC_10K",
+            "INTC_10K",
+            "INTC_10K",
+            "INTC_10K"
+          ],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "export control risk affecting semiconductor sales and licensing",
+          "category": "filing_scoped",
+          "expected_document_ids": [
+            "INTC_10K"
+          ],
+          "retrieved_document_ids": [],
+          "hit_at_1": false,
+          "hit_at_3": false,
+          "keyword_ok": true
+        },
+        {
+          "query": "China revenue concentration risk to the business",
+          "category": "filing_scoped",
+          "expected_document_ids": [
+            "INTC_10K"
+          ],
+          "retrieved_document_ids": [],
+          "hit_at_1": false,
+          "hit_at_3": false,
+          "keyword_ok": true
+        },
+        {
+          "query": "best recipes for sourdough bread baking at home",
+          "category": "negative_control",
+          "expected_document_ids": [],
+          "retrieved_document_ids": [],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "fantasy football draft strategy for quarterbacks",
+          "category": "negative_control",
+          "expected_document_ids": [],
+          "retrieved_document_ids": [],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "renewable solar panel installation costs for homeowners",
+          "category": "negative_control",
+          "expected_document_ids": [],
+          "retrieved_document_ids": [],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        },
+        {
+          "query": "backpacking travel itinerary across Europe on a budget",
+          "category": "negative_control",
+          "expected_document_ids": [],
+          "retrieved_document_ids": [],
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "keyword_ok": true
+        }
+      ]
+    }
+  ]
+}

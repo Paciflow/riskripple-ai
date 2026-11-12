@@ -71,6 +71,14 @@ assumptions, hypothetical scenarios, and AI interpretation; call
 `validate_report_citations` and refuse any unsupported citation before saving;
 never suggest executing a real trade.
 
+## Retrieval quality
+
+Agents 2 and 3 depend on `LocalLexicalRetriever` finding the right evidence (see
+`docs/EVALUATION.md` for a 34-question benchmark against the real demo fixtures:
+0.88 hit@3 at the recommended `min_score=0.15` threshold, with the specific
+precision/recall tradeoffs that threshold involves spelled out there, not just
+asserted).
+
 ## Orchestration
 
 Designed around Step Functions sequencing these 5 narrow agents (see
