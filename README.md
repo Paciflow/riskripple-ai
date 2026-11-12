@@ -104,8 +104,12 @@ Before deploying for the hackathon demo: confirm `bedrock:InvokeModel` access an
 
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — system design and AWS service usage
 - [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) — every source, with URL, license, and caveats
+- [docs/INGESTION_PIPELINE.md](docs/INGESTION_PIPELINE.md) — how a source becomes a frozen, hashed fixture
+- [docs/RAG_PIPELINE.md](docs/RAG_PIPELINE.md) — chunking, retrieval, citation enforcement
 - [docs/FINANCIAL_MODELS.md](docs/FINANCIAL_MODELS.md) — formulas and conventions
 - [docs/AGENTS.md](docs/AGENTS.md) — agent responsibilities, tools, prompts
 - [docs/EVALUATION.md](docs/EVALUATION.md) — RAG retrieval benchmark, with real results
+- [docs/TRADEOFFS.md](docs/TRADEOFFS.md) — design decisions and what was rejected, with why
+- [docs/COST_ESTIMATE.md](docs/COST_ESTIMATE.md) — cited AWS cost estimate (hackathon scale and beyond)
 - [docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md) — the 5-minute walkthrough
 - [docs/KNOWN_LIMITATIONS.md](docs/KNOWN_LIMITATIONS.md) — what's unverified and why
