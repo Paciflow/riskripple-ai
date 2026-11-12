@@ -56,6 +56,41 @@ Dashboard, Event Intelligence, Portfolio Analyzer, Ripple Graph, Scenario
 Simulator, Persona Comparison, Investigation Report — one route each, see
 `src/App.tsx`.
 
+The Portfolio Analyzer page also has a "Live Portfolio Calculator": edit weights,
+upload a CSV, or paste one (`symbol,weight` rows), and get real risk metrics
+computed client-side — no backend needed. It's a TypeScript port of the backend
+finance engine (`src/lib/finance.ts`, see `docs/KNOWN_LIMITATIONS.md` for why
+that's a second implementation, not a live call) running against a bundled
+price-history snapshot (`src/data/pricePanel.json`), so it's limited to the 8
+tickers that snapshot covers.
+
+## Testing
+
+```bash
+npm run test
+```
+
+25 Vitest cases verify `src/lib/finance.ts` against the same hand-checked synthetic
+values as the backend's own finance tests, plus the CSV parser
+(`src/lib/portfolioCsv.ts`). Regenerate `src/data/pricePanel.json` after refreshing
+the backend's market data fixtures:
+
+```bash
+cd ../backend && source .venv/bin/activate && cd ..
+python3 -c "
+import pandas as pd, json
+symbols = ['SPY','QQQ','AGG','GLD','BIL','NVDA','AMD','INTC']
+series = {s: pd.read_csv(f'data/fixtures/market/{s}.csv', parse_dates=['date']).set_index('date')['adj_close'] for s in symbols}
+panel = pd.DataFrame(series).dropna(how='any')
+json.dump({
+    'dates': [d.strftime('%Y-%m-%d') for d in panel.index],
+    'symbols': symbols,
+    'adj_close': {s: [round(float(v), 6) for v in panel[s]] for s in symbols},
+    'source_note': 'Adjusted close, Yahoo Finance chart API (unofficial). See docs/DATA_SOURCES.md.',
+}, open('frontend/src/data/pricePanel.json', 'w'))
+"
+```
+
 ## Verification
 
 `npm run build` (TypeScript + Vite production build, `tsc -b` then `vite build`)

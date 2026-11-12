@@ -37,7 +37,10 @@ read it before a demo.
   cleanly and whose Lambda container image has been built and run locally end to
   end — **not yet deployed** (blocked by this account's IAM permissions, not a code
   issue).
-- A React/Vite/Tailwind dashboard driven by that same real investigation output.
+- A React/Vite/Tailwind dashboard driven by that same real investigation output,
+  plus a live, client-side portfolio calculator (CSV upload or manual weights)
+  that recomputes real metrics in the browser against a bundled price-history
+  snapshot — no backend required (see `frontend/README.md`).
 
 ## Repository layout
 

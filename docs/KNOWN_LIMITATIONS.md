@@ -94,6 +94,21 @@ inspection alone.
   yourself at least once.
 - No authentication/authorization layer. Fine for a demo; not fine for anything
   beyond it.
+- **The Portfolio Analyzer's "Live Portfolio Calculator" (CSV upload / manual weight
+  editor) computes entirely client-side**, against a bundled `src/data/pricePanel.json`
+  snapshot (same 8-asset adjusted-close history as the backend fixtures, aligned on
+  501 common trading dates). It is a TypeScript port of
+  `backend/src/riskripple/finance/{returns,risk,portfolio}.py`
+  (`src/lib/finance.ts`), verified to match the backend's own hand-checked test
+  values exactly (25 Vitest cases, `npm run test` in `frontend/`) — but it is a
+  second implementation of the same formulas, not a call to the real backend, so a
+  future change to the Python finance engine will not automatically propagate here.
+  It only accepts tickers in the fixed 8-asset universe (no price history exists for
+  anything else in this build) and nothing uploaded is sent anywhere or persisted —
+  refreshing the page resets it. There is still no backend endpoint or S3 presigned
+  upload for portfolios (`docs/AWS_DEPLOYMENT.md`'s API surface doesn't cover this);
+  that remains a gap if a judge expects an uploaded CSV to actually reach the
+  backend/DynamoDB.
 
 ## Testing
 
@@ -102,6 +117,8 @@ inspection alone.
   chunking/retrieval layer, exposure graph extraction, agent tool wrappers, the
   end-to-end local orchestrator, and the Lambda handlers (against an in-memory
   store).
+- 25 frontend Vitest tests pass, covering the TS finance port and the portfolio CSV
+  parser (`frontend/src/lib/finance.test.ts`, `portfolioCsv.test.ts`).
 - No RAG evaluation benchmark (section 16.2's 30-50 question set) has been built
   yet — out of scope given the time available before the hackathon; flagged
   rather than fabricated.
