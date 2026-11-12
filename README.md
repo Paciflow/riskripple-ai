@@ -1,5 +1,7 @@
 # RiskRipple AI
 
+[![CI](https://github.com/Paciflow/riskripple-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/Paciflow/riskripple-ai/actions/workflows/ci.yml)
+
 *From global events to smarter investment decisions.*
 
 An AWS-powered agentic investment intelligence platform built for the **PolyFinances
