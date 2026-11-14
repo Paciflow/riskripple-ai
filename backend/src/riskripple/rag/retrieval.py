@@ -137,12 +137,18 @@ def build_evidence_context(results: list[RetrievedChunk], *, max_chunks: int = 8
 class BedrockKnowledgeBaseRetriever:
     """Production retriever backed by Amazon Bedrock Knowledge Bases.
 
-    UNTESTED against a live Knowledge Base: bedrock:Retrieve is access-denied on the
-    personal AWS account used for development (see docs/KNOWN_LIMITATIONS.md). Verify
-    this against the hackathon's temporary AWS account before relying on it in the demo.
+    CONFIRMED WORKING LIVE (2026-11-14, hackathon account 637423589728, us-east-1):
+    a real Knowledge Base (id SSYDB0BFCH) backed by Amazon S3 Vectors (Titan Text
+    Embeddings v2, 1024 dims) with the 3 real 10-Ks + 20 real Federal Register
+    documents indexed. This class needed zero code changes to work against it.
+    Retrieving "export restrictions on advanced computing chips to China" correctly
+    returned NVDA's and AMD's real export-control risk-factor passages with no
+    literal keyword overlap required -- a genuine semantic match the TF-IDF
+    `LocalLexicalRetriever` cannot do (see "What's NOT semantic here" in
+    docs/RAG_PIPELINE.md). See docs/KNOWLEDGE_BASE.md for setup details.
     """
 
-    def __init__(self, knowledge_base_id: str, region_name: str = "us-east-2"):
+    def __init__(self, knowledge_base_id: str, region_name: str = "us-east-1"):
         import boto3  # local import: keep boto3 optional for pure-local test runs
 
         self.knowledge_base_id = knowledge_base_id

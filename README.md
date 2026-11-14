@@ -108,8 +108,11 @@ Before deploying for the hackathon demo: confirm `bedrock:InvokeModel` access an
 - [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) — every source, with URL, license, and caveats
 - [docs/INGESTION_PIPELINE.md](docs/INGESTION_PIPELINE.md) — how a source becomes a frozen, hashed fixture
 - [docs/RAG_PIPELINE.md](docs/RAG_PIPELINE.md) — chunking, retrieval, citation enforcement
+- [docs/KNOWLEDGE_BASE.md](docs/KNOWLEDGE_BASE.md) — the real, deployed Bedrock Knowledge Base (S3 Vectors + Titan embeddings)
 - [docs/FINANCIAL_MODELS.md](docs/FINANCIAL_MODELS.md) — formulas and conventions
 - [docs/AGENTS.md](docs/AGENTS.md) — agent responsibilities, tools, prompts
+- [docs/ALERT_PIPELINE.md](docs/ALERT_PIPELINE.md) — the "watch and react" loop: new document → relevance check → auto-triggered investigation → alert
+- [docs/RIPPLE_INVESTIGATION.md](docs/RIPPLE_INVESTIGATION.md) — dynamic, evidence-gated discovery beyond the fixed alias lists
 - [docs/EVALUATION.md](docs/EVALUATION.md) — RAG retrieval benchmark, with real results
 - [docs/TRADEOFFS.md](docs/TRADEOFFS.md) — design decisions and what was rejected, with why
 - [docs/COST_ESTIMATE.md](docs/COST_ESTIMATE.md) — cited AWS cost estimate (hackathon scale and beyond)

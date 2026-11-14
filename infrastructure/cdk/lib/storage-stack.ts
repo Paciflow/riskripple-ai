@@ -15,6 +15,7 @@ export class StorageStack extends cdk.Stack {
   public readonly eventsTable: dynamodb.Table;
   public readonly portfoliosTable: dynamodb.Table;
   public readonly auditTable: dynamodb.Table;
+  public readonly alertsTable: dynamodb.Table;
 
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
@@ -91,6 +92,24 @@ export class StorageStack extends cdk.Stack {
       indexName: "by-analysis",
       partitionKey: { name: "analysis_id", type: dynamodb.AttributeType.STRING },
       sortKey: { name: "timestamp", type: dynamodb.AttributeType.STRING },
+    });
+
+    // User-facing alerts (riskripple.alerts.pipeline): a new regulatory document
+    // judged relevant to a tracked portfolio via the real exposure graph, with the
+    // auto-triggered investigation it produced. Distinct from RegulatoryEventsTable
+    // (which is the raw "have we seen this document" diffing ledger, keyed by the
+    // document itself) and from AuditEventsTable (internal pipeline execution log).
+    this.alertsTable = new dynamodb.Table(this, "AlertsTable", {
+      tableName: "riskripple-alerts",
+      partitionKey: { name: "alert_id", type: dynamodb.AttributeType.STRING },
+      billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
+      removalPolicy: cdk.RemovalPolicy.RETAIN,
+      pointInTimeRecovery: true,
+    });
+    this.alertsTable.addGlobalSecondaryIndex({
+      indexName: "by-status",
+      partitionKey: { name: "status", type: dynamodb.AttributeType.STRING },
+      sortKey: { name: "detected_at", type: dynamodb.AttributeType.STRING },
     });
   }
 }

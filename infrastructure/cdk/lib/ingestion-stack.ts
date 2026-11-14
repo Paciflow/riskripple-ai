@@ -3,11 +3,14 @@ import * as lambda from "aws-cdk-lib/aws-lambda";
 import * as events from "aws-cdk-lib/aws-events";
 import * as targets from "aws-cdk-lib/aws-events-targets";
 import * as s3 from "aws-cdk-lib/aws-s3";
+import * as dynamodb from "aws-cdk-lib/aws-dynamodb";
 import * as path from "path";
 import { Construct } from "constructs";
 
 export interface IngestionStackProps extends cdk.StackProps {
   dataBucket: s3.Bucket;
+  eventsTable: dynamodb.Table;
+  alertsTable: dynamodb.Table;
 }
 
 /**
@@ -27,9 +30,16 @@ export class IngestionStack extends cdk.Stack {
       }),
       timeout: cdk.Duration.minutes(5),
       memorySize: 1024,
-      environment: { RISKRIPPLE_DATA_BUCKET: props.dataBucket.bucketName },
+      environment: {
+        RISKRIPPLE_DATA_BUCKET: props.dataBucket.bucketName,
+        RISKRIPPLE_USE_DYNAMO: "1",
+      },
     });
     props.dataBucket.grantReadWrite(ingestFn);
+    // Alert pipeline diffing/persistence (riskripple.alerts.pipeline), run inline at
+    // the end of this same ingestion Lambda -- see api/handlers/ingest.py.
+    props.eventsTable.grantReadWriteData(ingestFn);
+    props.alertsTable.grantReadWriteData(ingestFn);
 
     new events.Rule(this, "DailyIngestionRule", {
       schedule: events.Schedule.rate(cdk.Duration.hours(24)),

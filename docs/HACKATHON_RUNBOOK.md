@@ -31,7 +31,7 @@ sequence — move to the fallback and come back if time allows.
 ### 1. Confirm Bedrock access and pick a model (5 min)
 
 ```bash
-aws bedrock list-foundation-models --region us-east-2 \
+aws bedrock list-foundation-models --region us-east-1 \
   --query "modelSummaries[?contains(modelId,'anthropic.claude')].modelId"
 ```
 
@@ -74,7 +74,7 @@ mentioning to judges as a specific, checked claim rather than "it should work."
 
 ```bash
 cd infrastructure/cdk
-npx cdk bootstrap aws://<account-id>/us-east-2
+npx cdk bootstrap aws://<account-id>/us-east-1
 ```
 
 ### 4. Deploy storage first, alone (~3 min)
@@ -106,7 +106,7 @@ than running out the clock here.
 ### 6. Smoke-test the deployed API (~5 min)
 
 ```bash
-curl https://<api-id>.execute-api.us-east-2.amazonaws.com/prod/health
+curl https://<api-id>.execute-api.us-east-1.amazonaws.com/prod/health
 ```
 
 Then exercise one real `/api/analyses` call and confirm the response shape matches
@@ -116,7 +116,7 @@ what `frontend/src/types.ts` expects before pointing the frontend at it.
 
 ```bash
 cd frontend
-echo "VITE_API_BASE_URL=https://<api-id>.execute-api.us-east-2.amazonaws.com/prod" > .env.production
+echo "VITE_API_BASE_URL=https://<api-id>.execute-api.us-east-1.amazonaws.com/prod" > .env.production
 npm run build
 ```
 

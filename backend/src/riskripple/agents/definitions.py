@@ -19,12 +19,20 @@ from riskripple.tools.exposure_tools import ALL_EXPOSURE_TOOLS
 from riskripple.tools.finance_tools import ALL_FINANCE_TOOLS
 from riskripple.tools.persona_tools import ALL_PERSONA_TOOLS
 from riskripple.tools.regulatory_tools import ALL_REGULATORY_TOOLS
+from riskripple.tools.research_tools import ALL_RESEARCH_TOOLS
 
 # Not assumed to be enabled in any given account/region -- verify with
 # `aws bedrock list-foundation-models` on the hackathon account before the demo, per
 # the master spec's instruction not to assume access to a specific model.
-BEDROCK_MODEL_ID = os.environ.get("BEDROCK_MODEL_ID", "anthropic.claude-sonnet-4-5-20250929-v1:0")
-BEDROCK_REGION = os.environ.get("BEDROCK_REGION", "us-east-2")
+#
+# Must be an inference-profile ID, not the bare model ID, for this model/account --
+# confirmed live on the hackathon account (637423589728, us-east-1):
+# on-demand invocation of the bare "anthropic.claude-sonnet-4-5-20250929-v1:0" fails
+# with ValidationException ("on-demand throughput isn't supported ... retry with an
+# inference profile"). `aws bedrock list-inference-profiles --region us-east-1`
+# confirmed "us.anthropic.claude-sonnet-4-5-20250929-v1:0" is the correct ID.
+BEDROCK_MODEL_ID = os.environ.get("BEDROCK_MODEL_ID", "us.anthropic.claude-sonnet-4-5-20250929-v1:0")
+BEDROCK_REGION = os.environ.get("BEDROCK_REGION", "us-east-1")
 
 
 def _bedrock_model() -> BedrockModel:
@@ -75,6 +83,39 @@ assumptions, hypothetical scenarios, and your own interpretation. Before finishi
 call validate_report_citations and refuse to include any citation it flags as
 unsupported. Call save_investigation_report only once the report is complete. Never
 suggest executing a real trade."""
+
+
+RIPPLE_INVESTIGATOR_PROMPT = """You are the Ripple Investigation agent for RiskRipple
+AI. You are given an already-confirmed-real event and the portfolio holdings it has
+already been directly or indirectly matched to -- that part is done, do not redo it
+and do not question whether the event itself happened.
+
+Your job is to look BEYOND the fixed alias lists for additional ripple effects: new
+entities, materials, technologies, or relationships this specific event names that
+the existing exposure graph doesn't already know about. Use propose_candidate_entities
+to surface candidates from the event text, then use search_filings_fulltext (and the
+existing regulatory/exposure tools) to check whether any held company's real filing
+disclosure actually supports a connection. Never treat a candidate as a relationship
+until a tool call has found literal textual evidence for it.
+
+Classify every claim you make into exactly one of: verified_fact (directly supported
+by a tool's returned evidence or a deterministic calculation), evidence_supported_
+hypothesis (a plausible mechanism with partial real evidence), unverified_possibility
+(worth investigating further, but no supporting evidence found), or simulated_outcome
+(explicitly assumption-based, never your own generated number). A verified competitor
+relationship does not by itself prove that competitor's price will move -- say so.
+Stop once you've checked the candidates you found or hit your round/tool-call budget;
+do not keep inventing new questions indefinitely. If you find nothing beyond the
+already-confirmed matches, say that plainly rather than manufacturing a hypothesis to
+seem thorough."""
+
+
+def build_ripple_investigator_agent() -> Agent:
+    return Agent(
+        model=_bedrock_model(),
+        tools=ALL_RESEARCH_TOOLS + ALL_REGULATORY_TOOLS + ALL_EXPOSURE_TOOLS,
+        system_prompt=RIPPLE_INVESTIGATOR_PROMPT,
+    )
 
 
 def build_regulatory_watchdog_agent() -> Agent:

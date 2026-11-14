@@ -12,12 +12,19 @@ inspection alone.
     `backend/src/riskripple/agents/definitions.py` have never been invoked live.
     They construct correctly and register their tools correctly (verified), but the
     LLM's tool-selection/orchestration behavior on top of those tools is untested.
-  - `BedrockKnowledgeBaseRetriever` in `backend/src/riskripple/rag/retrieval.py` is
-    untested against a live Knowledge Base for the same reason.
-  - **Action before the hackathon demo:** on the temporary AWS account, run
-    `aws bedrock list-foundation-models --region <region>` to find an enabled model
-    ID, set `BEDROCK_MODEL_ID` accordingly, and smoke-test one agent end to end
-    before relying on the live path in front of judges.
+  - `BedrockKnowledgeBaseRetriever` in `backend/src/riskripple/rag/retrieval.py`
+    was untested against a live Knowledge Base for the same reason -- **now
+    resolved**: confirmed working live on the hackathon account, see
+    `docs/KNOWLEDGE_BASE.md`.
+  - **Action before the hackathon demo:** run `scripts/verify_bedrock_agent.py` on
+    whatever AWS credentials are active. Re-run it again as soon as temporary
+    hackathon credentials are loaded into the environment -- as of the last run
+    (2026-11-14, hackathon day), `aws sts get-caller-identity` still showed this same
+    personal account (`011356580161`), and `bedrock:ListFoundationModels` was still
+    access-denied, meaning the new temporary credentials had not yet been configured
+    in this environment. The Ripple Investigation Agent's deterministic fallback mode
+    (`docs/RIPPLE_INVESTIGATION.md`) does not depend on this succeeding and is the
+    default either way.
 - **`cloudformation:ListStacks` (and by extension `cdk deploy`) is access-denied.**
   `cdk synth` works and has been run successfully for all 4 stacks
   (`RiskRipple-Storage`, `RiskRipple-Api`, `RiskRipple-Ingestion`,
@@ -40,7 +47,11 @@ inspection alone.
   (`KNOWN_SUPPLIER_ALIASES` in `graph/company_graph.py`) and only scans the 3
   semiconductor 10-Ks in the demo fixture set. Absence of an edge means "not
   found in this limited text," not "confirmed no relationship" — this is stated
-  explicitly in every `InvestigationReport.limitations` list, not hidden.
+  explicitly in every `InvestigationReport.limitations` list, not hidden. The
+  Ripple Investigation Agent (`docs/RIPPLE_INVESTIGATION.md`) widens detection
+  beyond this fixed list, but still only within the same 3 filings — a real
+  material/entity not mentioned in any of them is still correctly reported as
+  "unverified possibility," not fabricated.
 - **The Global Affairs Canada sanctions adapter parses a bilingual XML export**;
   it has not been tested against the GAC entity-only (non-individual) records or
   against schedule/program filtering beyond what's used in

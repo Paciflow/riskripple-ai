@@ -21,7 +21,9 @@ from riskripple.schemas.models import (
     AuditEvent,
     ExposureEdge,
     ExposureGraph,
+    Hypothesis,
     InvestigationReport,
+    InvestigationStep,
     PersonaEvaluation,
     PersonaName,
 )
@@ -62,6 +64,8 @@ def run_investigation(
     event_entities: list[str],
     persona_names: list[str] | None = None,
     fixtures_dir: str | None = None,
+    hypotheses: list[Hypothesis] | None = None,
+    investigation_trace: list[InvestigationStep] | None = None,
 ) -> tuple[AnalysisResult, InvestigationReport]:
     """Run the full investigation pipeline against real frozen demo data.
 
@@ -70,6 +74,13 @@ def run_investigation(
     -> ResolveEntities -> MapExposure -> CalculateFinancialMetrics -> RunStressScenarios
     -> EvaluatePersonas -> GenerateExplanation -> ValidateCitations -> PersistResults
     -> NotifyCompletion.
+
+    `hypotheses`/`investigation_trace` are optional: when a caller (e.g.
+    alerts.pipeline) has already run the Ripple Investigation loop
+    (investigation.loop.run_ripple_investigation) beyond this event's direct/supplier
+    matches, those findings are threaded straight into the resulting
+    InvestigationReport rather than recomputed here -- this function's own 13 steps
+    are unchanged either way.
     """
     fixtures_dir = fixtures_dir or str(FIXTURES_DIR)
     persona_names = persona_names or [p.value for p in PersonaName]
@@ -177,6 +188,8 @@ def run_investigation(
         ai_interpretations=explanation["ai_interpretations"],
         citations=citations,
         limitations=analysis.limitations,
+        hypotheses=hypotheses or [],
+        investigation_trace=investigation_trace or [],
         next_steps=[
             "Expand the supplier-relationship fixture set beyond 3 companies for broader coverage.",
             "Verify Bedrock access on the hackathon AWS account and re-run via the live agent path.",

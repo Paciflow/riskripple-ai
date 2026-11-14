@@ -28,6 +28,21 @@ FEDERAL_REGISTER_API_URL = "https://www.federalregister.gov/api/v1/documents.jso
 BIS_AGENCY_SLUG = "industry-and-security-bureau"
 OFAC_AGENCY_SLUG = "foreign-assets-control-office"
 
+# Broader default net for the live scheduled ingestion path (api/handlers/ingest.py).
+# Deliberately not limited to "semiconductor export" -- that single hardcoded term was
+# the reason a real event about an unrelated material/sector could never be detected
+# at all, regardless of how good downstream relevance-matching is. This list is still
+# a seed, not exhaustive; scripts/build_demo_snapshot.py intentionally keeps using the
+# single original term so the frozen demo fixture (and the tests asserting exact alert
+# counts against it) stays reproducible -- this broader list is only for the live path.
+DEFAULT_REGULATORY_SEARCH_TERMS: list[str] = [
+    "semiconductor export",
+    "export administration regulations",
+    "entity list addition",
+    "critical minerals",
+    "rare earth",
+]
+
 
 @dataclass
 class RegulatoryDocument:
@@ -98,3 +113,35 @@ def search_documents(
         license_or_restriction="U.S. government public domain publication; official and free, no API key required.",
     )
     return RegulatoryDocumentsResult(documents=documents, metadata=metadata)
+
+
+def search_documents_multi(
+    *,
+    terms: list[str] | None = None,
+    agency_slugs: list[str] | None = None,
+    per_page: int = 20,
+    client: httpx.Client | None = None,
+) -> RegulatoryDocumentsResult:
+    """Run `search_documents` once per term in `terms` (default:
+    DEFAULT_REGULATORY_SEARCH_TERMS) and return the union, deduplicated by
+    `document_number`. This is what turns "only ever looks for one fixed phrase" into
+    "casts a wider net" without requiring any agent/LLM involvement -- a real, if
+    still finite, improvement over a single hardcoded term.
+    """
+    terms = terms or DEFAULT_REGULATORY_SEARCH_TERMS
+    own_client = client is None
+    client = client or httpx.Client(timeout=20.0)
+    try:
+        seen: dict[str, RegulatoryDocument] = {}
+        last_metadata: SourceMetadata | None = None
+        for term in terms:
+            result = search_documents(term=term, agency_slugs=agency_slugs, per_page=per_page, client=client)
+            last_metadata = result.metadata
+            for doc in result.documents:
+                seen.setdefault(doc.document_number, doc)
+    finally:
+        if own_client:
+            client.close()
+
+    assert last_metadata is not None  # terms is never empty
+    return RegulatoryDocumentsResult(documents=list(seen.values()), metadata=last_metadata)

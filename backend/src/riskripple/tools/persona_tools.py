@@ -8,7 +8,7 @@ from strands import tool
 from riskripple.config import REPORTS_DIR
 from riskripple.finance.stress import DEMO_SCENARIOS
 from riskripple.personas import policies as PP
-from riskripple.schemas.models import PersonaName
+from riskripple.schemas.models import PERSONA_DISPLAY_NAMES, PersonaName
 from riskripple.schemas.provenance import SourceMetadata
 
 
@@ -65,22 +65,24 @@ def generate_decision_explanation(evaluations: dict[str, dict], scenario_summary
     facts, assumptions, interpretations = [], [], []
 
     for persona, ev in evaluations.items():
+        display_name = PERSONA_DISPLAY_NAMES.get(persona, persona)
         facts.append(
-            f"{persona}: historical annualized return {ev['annualized_return']:.1%}, "
+            f"{display_name}: historical annualized return {ev['annualized_return']:.1%}, "
             f"annualized volatility {ev['annualized_volatility']:.1%}, "
             f"max drawdown {ev['max_drawdown']:.1%} (from real historical price data)."
         )
         if ev["constraint_violations"]:
             interpretations.append(
-                f"{persona}'s generated allocation violates its own policy constraints: "
+                f"{display_name}'s generated allocation violates its own policy constraints: "
                 f"{'; '.join(ev['constraint_violations'])}. This reflects a limited demo "
                 "asset universe, not a recommended real allocation."
             )
 
     for scenario, info in scenario_summary.items():
+        hardest_hit_display = PERSONA_DISPLAY_NAMES.get(info["hardest_hit"], info["hardest_hit"])
         assumptions.append(
             f"'{scenario}' scenario: hypothetical, assumption-based asset shocks, not a forecast. "
-            f"Hardest hit: {info['hardest_hit']} (${info['pnl_by_persona'][info['hardest_hit']]:,.0f})."
+            f"Hardest hit: {hardest_hit_display} (${info['pnl_by_persona'][info['hardest_hit']]:,.0f})."
         )
 
     return {"facts": facts, "assumptions": assumptions, "ai_interpretations": interpretations}

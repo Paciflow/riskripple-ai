@@ -40,11 +40,13 @@ metadata_filter=) -> list[RetrievedChunk]`):
   relevance threshold). Every score is a literal term-overlap computation, which
   made it possible to debug citation accuracy by hand while building this.
 - **`BedrockKnowledgeBaseRetriever`** — the production path, backed by Bedrock
-  Knowledge Bases + a managed vector store. Requires `bedrock:Retrieve`, which is
-  access-denied on the development AWS account, so this has never actually run
-  against a live Knowledge Base. It's written to the exact same interface so
-  swapping it in requires no caller changes — only an environment/wiring change,
-  once Bedrock access is confirmed on the hackathon account.
+  Knowledge Bases + a managed vector store. **Confirmed working live** on the
+  hackathon account (2026-11-14) against a real Amazon S3 Vectors-backed Knowledge
+  Base with the real 10-Ks and Federal Register documents indexed — see
+  `docs/KNOWLEDGE_BASE.md` for the real deployment and a real semantic-match example
+  it produced that the lexical retriever below cannot. Required zero code changes.
+  Not yet wired into the active tool layer (still an explicit, undecided tradeoff,
+  not an oversight — see `docs/KNOWLEDGE_BASE.md`'s last section).
 
 `metadata_filter` lets a caller scope retrieval to a specific document (e.g.
 `{"document_id": "NVDA_10K"}`), which is how `retrieve_company_filings` in

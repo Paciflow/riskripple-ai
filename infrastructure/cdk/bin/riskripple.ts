@@ -9,7 +9,7 @@ const app = new cdk.App();
 
 const env = {
   account: process.env.CDK_DEFAULT_ACCOUNT,
-  region: process.env.CDK_DEFAULT_REGION || "us-east-2",
+  region: process.env.CDK_DEFAULT_REGION || "us-east-1",
 };
 
 const storage = new StorageStack(app, "RiskRipple-Storage", { env });
@@ -26,6 +26,8 @@ new ApiStack(app, "RiskRipple-Api", {
 new IngestionStack(app, "RiskRipple-Ingestion", {
   env,
   dataBucket: storage.dataBucket,
+  eventsTable: storage.eventsTable,
+  alertsTable: storage.alertsTable,
 });
 
 new WorkflowStack(app, "RiskRipple-Workflow", {

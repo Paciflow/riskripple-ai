@@ -1,0 +1,63 @@
+[
+  {
+    "alert_id": "alert_68f1e657c7c7",
+    "document_id": "2026-00789",
+    "title": "Revision to License Review Policy for Advanced Computing Commodities",
+    "source_name": "Federal Register (Bureau of Industry and Security)",
+    "source_url": "https://www.federalregister.gov/documents/2026/01/15/2026-00789/revision-to-license-review-policy-for-advanced-computing-commodities",
+    "publication_date": "2026-01-15",
+    "detected_at": "2026-11-14T17:38:45.301436Z",
+    "matches": [
+      {
+        "symbol": "NVDA",
+        "relationship": "direct",
+        "node_id": "NVDA",
+        "matched_entity": "NVIDIA",
+        "evidence_snippet": "The semiconductors covered by this rule are the Nvidia H200 and its equivalents, as well as less advanced chips--provided that (1) the semiconductors are commercially available in the United States at the time of publication of this rule and (2) the exporter certifies that: there is sufficient supply of this product in the United States; production of this product for exports to China will not divert global foundry capacity for similar or more advanced products for end users in the United States; the recipient has demonstrated sufficient security procedures; and the item undergoes independent, third-party testing in the United States to verify its performance specifications."
+      }
+    ],
+    "linked_analysis_id": "ana_5984dc37d3bd",
+    "status": "investigated"
+  },
+  {
+    "alert_id": "alert_e4a7616d14b9",
+    "document_id": "2025-16735",
+    "title": "Revocation of Validated End-User Authorizations in the People's Republic of China",
+    "source_name": "Federal Register (Bureau of Industry and Security)",
+    "source_url": "https://www.federalregister.gov/documents/2025/09/02/2025-16735/revocation-of-validated-end-user-authorizations-in-the-peoples-republic-of-china",
+    "publication_date": "2025-09-02",
+    "detected_at": "2026-11-14T17:38:45.427260Z",
+    "matches": [
+      {
+        "symbol": "NVDA",
+        "relationship": "supply_chain",
+        "node_id": "Samsung",
+        "matched_entity": "Samsung",
+        "evidence_snippet": "In this final rule, the Bureau of Industry and Security (BIS) amends the Export Administration Regulations (EAR) to revise the existing Validated End-User (VEU) Authorizations list for the People's Republic of China (PRC) by removing Intel Semiconductor (Dalian) Ltd; Samsung China Semiconductor Co."
+      },
+      {
+        "symbol": "AMD",
+        "relationship": "supply_chain",
+        "node_id": "Samsung",
+        "matched_entity": "Samsung",
+        "evidence_snippet": "In this final rule, the Bureau of Industry and Security (BIS) amends the Export Administration Regulations (EAR) to revise the existing Validated End-User (VEU) Authorizations list for the People's Republic of China (PRC) by removing Intel Semiconductor (Dalian) Ltd; Samsung China Semiconductor Co."
+      },
+      {
+        "symbol": "INTC",
+        "relationship": "supply_chain",
+        "node_id": "Samsung",
+        "matched_entity": "Samsung",
+        "evidence_snippet": "In this final rule, the Bureau of Industry and Security (BIS) amends the Export Administration Regulations (EAR) to revise the existing Validated End-User (VEU) Authorizations list for the People's Republic of China (PRC) by removing Intel Semiconductor (Dalian) Ltd; Samsung China Semiconductor Co."
+      },
+      {
+        "symbol": "INTC",
+        "relationship": "direct",
+        "node_id": "INTC",
+        "matched_entity": "Intel",
+        "evidence_snippet": "In this final rule, the Bureau of Industry and Security (BIS) amends the Export Administration Regulations (EAR) to revise the existing Validated End-User (VEU) Authorizations list for the People's Republic of China (PRC) by removing Intel Semiconductor (Dalian) Ltd; Samsung China Semiconductor Co."
+      }
+    ],
+    "linked_analysis_id": "ana_64e72037c1f6",
+    "status": "investigated"
+  }
+]

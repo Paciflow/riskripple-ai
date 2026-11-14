@@ -96,5 +96,7 @@ def test_generate_decision_explanation_flags_constraint_violations():
     scenario_summary = PT.compare_scenario_results(evaluations)
     explanation = PT.generate_decision_explanation(evaluations, scenario_summary)
     assert len(explanation["facts"]) == 2
-    assert any("prudent" in i for i in explanation["ai_interpretations"])
+    # Prose uses the English display name (Conservative), not the raw "prudent"
+    # identifier -- see PERSONA_DISPLAY_NAMES in schemas/models.py.
+    assert any("Conservative" in i for i in explanation["ai_interpretations"])
     assert scenario_summary["severe"]["hardest_hit"] == "audacieux"

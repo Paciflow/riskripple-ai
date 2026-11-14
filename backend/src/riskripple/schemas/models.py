@@ -25,6 +25,16 @@ class PersonaName(str, Enum):
     AUDACIEUX = "audacieux"
 
 
+# English display labels for user-facing text (prose, UI). The enum values above stay
+# as-is -- they're used as dict keys/identifiers throughout the backend and in the
+# frozen demo fixture -- this is purely for strings a person reads.
+PERSONA_DISPLAY_NAMES: dict[str, str] = {
+    PersonaName.PRUDENT.value: "Conservative",
+    PersonaName.EQUILIBRE.value: "Balanced",
+    PersonaName.AUDACIEUX.value: "Aggressive",
+}
+
+
 class Holding(BaseModel):
     symbol: str
     weight: float = Field(ge=0, le=1)
@@ -136,6 +146,11 @@ class InvestigationReport(BaseModel):
     citations: list[SourceMetadata]
     limitations: list[str]
     next_steps: list[str]
+    # Optional: populated only when the Ripple Investigation Agent ran (see
+    # docs/RIPPLE_INVESTIGATION.md). Additive fields, default empty, so existing
+    # reports/fixtures (and the frontend types built against them) stay valid.
+    hypotheses: list[Hypothesis] = Field(default_factory=list)
+    investigation_trace: list[InvestigationStep] = Field(default_factory=list)
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
@@ -150,3 +165,73 @@ class AuditEvent(BaseModel):
     model_identifier: str | None = None
     detail: str | None = None
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+
+class RelevanceMatch(BaseModel):
+    """One concrete, literal reason a new document was judged relevant to a
+    portfolio -- never a similarity score or an LLM guess. See
+    riskripple.alerts.relevance."""
+
+    symbol: str
+    relationship: Literal["direct", "supply_chain"]
+    node_id: str  # the canonical exposure-graph node that matched (== symbol for "direct")
+    matched_entity: str  # the literal alias text actually found in the document
+    evidence_snippet: str
+
+
+EvidenceStatus = Literal[
+    "verified_fact",  # directly supported by an identified source or deterministic calculation
+    "evidence_supported_hypothesis",  # plausible causal mechanism with partial supporting evidence
+    "unverified_possibility",  # worth investigating, not established
+    "simulated_outcome",  # calculated using explicit assumptions and reproducible code
+]
+
+
+class Hypothesis(BaseModel):
+    """One ripple-effect claim produced by the Ripple Investigation Agent (see
+    docs/RIPPLE_INVESTIGATION.md), always carrying its evidence status -- a
+    hypothesis is never presented with the same confidence as a verified fact.
+    A verified competitor relationship does not, by itself, prove a competitor's
+    stock price will move; that distinction is what `status` exists to preserve.
+    """
+
+    hypothesis_id: str = Field(default_factory=lambda: _new_id("hyp"))
+    statement: str
+    status: EvidenceStatus
+    related_symbols: list[str] = Field(default_factory=list)
+    evidence_snippet: str | None = None
+    source_tool: str | None = None
+
+
+class InvestigationStep(BaseModel):
+    """One entry in the investigation trace: a single question the Ripple
+    Investigation Agent asked, what it did about it, and what it found. Rendered
+    directly in the UI per the explainability requirement -- this is structured
+    process, not raw model reasoning.
+    """
+
+    step_id: str = Field(default_factory=lambda: _new_id("step"))
+    question: str
+    why_relevant: str
+    tools_consulted: list[str] = Field(default_factory=list)
+    evidence_found: list[str] = Field(default_factory=list)
+    result_status: EvidenceStatus
+    follow_up_questions: list[str] = Field(default_factory=list)
+    related_symbols: list[str] = Field(default_factory=list)
+
+
+class Alert(BaseModel):
+    """A new regulatory/export-control document judged relevant to a tracked
+    portfolio, with the auto-triggered investigation it produced. See
+    riskripple.alerts.pipeline and docs/ALERT_PIPELINE.md."""
+
+    alert_id: str = Field(default_factory=lambda: _new_id("alert"))
+    document_id: str
+    title: str
+    source_name: str
+    source_url: str
+    publication_date: str | None
+    detected_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    matches: list[RelevanceMatch]
+    linked_analysis_id: str | None = None
+    status: Literal["new", "investigated"] = "new"
